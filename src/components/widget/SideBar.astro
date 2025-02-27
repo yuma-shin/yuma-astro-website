@@ -2,6 +2,7 @@
 import Profile from './Profile.astro'
 import Tag from './Tags.astro'
 import Categories from './Categories.astro'
+import Certificates from './Certificates.astro'
 import type { MarkdownHeading } from 'astro'
 import TOC from './TOC.astro'
 
@@ -19,7 +20,8 @@ const headings = Astro.props.headings
         <Profile></Profile>
     </div>
     <div id="sidebar-sticky" class="transition-all duration-700 flex flex-col w-full gap-4 top-4 sticky top-4">
-        <Categories class="onload-animation" style="animation-delay: 150ms"></Categories>
-        <Tag class="onload-animation" style="animation-delay: 200ms"></Tag>
+        <Certificates class="onload-animation" style="animation-delay: 150ms"></Certificates>
+        <Categories class="onload-animation" style="animation-delay: 200ms"></Categories>
+        <Tag class="onload-animation" style="animation-delay: 250ms"></Tag>
     </div>
 </div>

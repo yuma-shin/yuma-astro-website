@@ -5,11 +5,15 @@ export const en: Translation = {
   [Key.home]: 'Home',
   [Key.about]: 'About',
   [Key.archive]: 'Archive',
+  [Key.work]: "Work",
+  [Key.awards]: "Awards",
+  [Key.uses]: "Uses",
   [Key.search]: 'Search',
 
   [Key.tags]: 'Tags',
   [Key.categories]: 'Categories',
   [Key.recentPosts]: 'Recent Posts',
+  [Key.certificates]: "Certificates",
 
   [Key.comments]: 'Comments',
 

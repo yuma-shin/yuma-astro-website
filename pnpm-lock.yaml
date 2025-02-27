@@ -29,6 +29,9 @@ importers:
       '@fontsource/roboto':
         specifier: ^5.1.0
         version: 5.1.0
+      '@fontsource/zen-kaku-gothic-new':
+        specifier: ^5.1.1
+        version: 5.1.1
       '@iconify-json/fa6-brands':
         specifier: ^1.2.3
         version: 1.2.3
@@ -1177,6 +1180,9 @@ packages:
 
   '@fontsource/roboto@5.1.0':
     resolution: {integrity: sha512-cFRRC1s6RqPygeZ8Uw/acwVHqih8Czjt6Q0MwoUoDe9U3m4dH1HmNDRBZyqlMSFwgNAUKgFImncKdmDHyKpwdg==}
+
+  '@fontsource/zen-kaku-gothic-new@5.1.1':
+    resolution: {integrity: sha512-HudV9OxGnU2lhXsQdO1i480DnV8qqJBNKepCUuaoeGVUaAOTftyNy/ZbzwLps9cu7rj2oO8gOn+3qRzDlnhNpA==}
 
   '@iconify-json/fa6-brands@1.2.3':
     resolution: {integrity: sha512-vwdbeIpy9BgGonD6dwMIoZnzn/xo3w/mn1A+YcNxo42xTmVJeX2oobGlXlbN9P4BNi879dK9xvOjZpj7hYV2mg==}
@@ -6208,6 +6214,8 @@ snapshots:
   '@fontsource-variable/jetbrains-mono@5.1.1': {}
 
   '@fontsource/roboto@5.1.0': {}
+
+  '@fontsource/zen-kaku-gothic-new@5.1.1': {}
 
   '@iconify-json/fa6-brands@1.2.3':
     dependencies:

@@ -2,11 +2,15 @@ enum I18nKey {
   home = 'home',
   about = 'about',
   archive = 'archive',
+  work = 'work',
+  awards = 'awards',
+  uses = 'uses',
   search = 'search',
 
   tags = 'tags',
   categories = 'categories',
   recentPosts = 'recentPosts',
+  certificates = "certificates",
 
   comments = 'comments',
 

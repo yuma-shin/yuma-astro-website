@@ -1,0 +1,67 @@
+---
+
+import MainGridLayout from '../layouts/MainGridLayout.astro'
+
+import { getEntry } from 'astro:content'
+import { getImage } from 'astro:assets';
+import { i18n } from '../i18n/translation'
+import I18nKey from '../i18n/i18nKey'
+
+import webPexerImage from '../assets/images/webpexer.webp';
+import llamindImage from '../assets/images/llamind.webp';
+import chunkSizeImage from '../assets/images/chunk.webp';
+import ollamaImage from '../assets/images/ollama.webp';
+
+const projects = [
+  {
+    name: 'WebPexer',
+    description: '画像ファイルのwebpとpngの相互変換をするデスクトップアプリケーションです。',
+    link: { href: 'https://github.com/yuma-shin/webpexer', label: 'github.com' },
+    logo: webPexerImage.src,
+  },
+  {
+    name: 'Llamind',
+    description: 'Chat GPTライクに使えるOllama向けのデスクトップアプリケーションです。',
+    link: { href: 'https://github.com/yuma-shintani/llamind', label: 'github.com' },
+    logo: llamindImage.src,
+  },
+  {
+    name: 'Chunk Size Checker',
+    description: 'ドキュメントから総トークン数と目安となるChunk Size、Chunk Overlapを算出するデスクトップアプリケーションです。',
+    link: { href: 'https://github.com/yuma-shintani/chunksize-checker', label: 'github.com' },
+    logo: chunkSizeImage.src,
+  },
+  {
+    name: 'Ollama Model Library',
+    description: 'Ollama Modelsで利用可能なモデルの最新データセットをJSONフォーマットで提供します。',
+    link: { href: 'https://github.com/yuma-shintani/ollama-model-library', label: 'github.com' },
+    logo: ollamaImage.src,
+  },
+];
+---
+<MainGridLayout title={i18n(I18nKey.work)} description={i18n(I18nKey.work)}>
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32 ">
+        <div class="card-base z-10 px-9 py-6 relative w-full">
+            <h1 class="text-3xl font-bold dark:text-white">My Product</h1>
+            <p class="mt-4 text-gray-600 dark:text-gray-400">
+                個人的に開発したアプリケーション・ツールを紹介します。
+            </p>
+            <ul class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-2 mt-8">
+                {projects.map((project) => (
+                  <li>
+                    <a href={project.link.href} class="block bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 text-center hover:shadow-xl transition hover:bg-gray-100 hover:dark:bg-gray-700" target="_blank">
+                      <div class="flex items-center justify-center h-36 w-36 mx-auto rounded-full bg-white shadow-md dark:border dark:border-gray-700">
+                        <img src={project.logo} alt={project.name} class="h-32 w-32 object-contain" />
+                      </div>
+                      <h2 class="mt-6 text-xl font-semibold dark:text-white">{project.name}</h2>
+                      <p class="mt-4 text-gray-600 dark:text-gray-400">{project.description}</p>
+                      <p class="mt-6 flex items-center justify-center text-sm text-gray-500 dark:text-gray-300">
+                        🔗 {project.link.label}
+                      </p>
+                    </a>
+                  </li>
+                ))}
+            </ul>
+        </div>
+    </div>
+</MainGridLayout>

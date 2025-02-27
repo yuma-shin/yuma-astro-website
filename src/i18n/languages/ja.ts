@@ -5,11 +5,15 @@ export const ja: Translation = {
   [Key.home]: 'Home',
   [Key.about]: 'About',
   [Key.archive]: 'Archive',
+  [Key.work]: "Work",
+  [Key.awards]: "Awards",
+  [Key.uses]: "Uses",
   [Key.search]: '検索',
 
   [Key.tags]: 'タグ',
   [Key.categories]: 'カテゴリ',
   [Key.recentPosts]: '最近の投稿',
+  [Key.certificates]: "Certificates",
 
   [Key.comments]: 'コメント',
 
