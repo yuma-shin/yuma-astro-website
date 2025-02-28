@@ -6,14 +6,19 @@ import { getEntry } from 'astro:content'
 import { getImage } from 'astro:assets';
 import { i18n } from '../i18n/translation'
 import I18nKey from '../i18n/i18nKey'
-import BackToTop from '../components/control/BackToTop.astro'
+import NotFound from '../assets/images/notfound.webp'
 
 ---
 <MainGridLayout title={i18n(I18nKey.notfound)} description={i18n(I18nKey.notfound)}>
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32 ">
         <div class="card-base z-10 px-9 py-6 relative w-full">
-            <h1 class="text-3xl font-bold dark:text-white">404 NotFound</h1>
-            <BackToTop />
-        </div>
+            <div class="flex flex-col items-center">
+                <h1 class="text-xl font-bold dark:text-white mb-4">404</h1>
+                <h1 class="text-5xl font-bold dark:text-white mb-4">Page not found</h1>
+                <p class="font-bold dark:text-white text-md">The page you're looking for was not found.</p>
+                <img src={NotFound.src} class="my-10" width="300" height="300" style="color:transparent; border-radius:40% 60% 40% 50% / 60% 60% 50% 60%;"/>
+                <a href="/" class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 mt-4">Return to home</a>
+            </div>
+        </div>    
     </div>
 </MainGridLayout>
