@@ -65,7 +65,7 @@ export default defineConfig({
   })],
   markdown: {
     remarkPlugins: [
-      [remnarkLinkCard,{ shortenUrl: true, cache: true }],
+      [remnarkLinkCard,{ shortenUrl: true }],
       remarkMath,
       remarkReadingTime,
       remarkExcerpt,
