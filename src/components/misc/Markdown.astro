@@ -15,9 +15,9 @@ const className = Astro.props.class
 
 <script>
     let linkCards = Array.from(document.querySelectorAll(".rlc-container"))
-
     for (let linkCard of linkCards) {
         linkCard.classList.add("no-styling")
+        linkCard.setAttribute('target','_blank');
     }
 </script>
 
