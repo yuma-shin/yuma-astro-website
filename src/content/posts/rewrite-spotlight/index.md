@@ -9,8 +9,8 @@ draft: false
 lang: 'ja'
 prevSlug: "rewrite-nextjs"
 prevTitle: "個人WEBをNext.js + Chakra UIで書き直しました"
-nextSlug: "oh-my-posh"
-nextTitle: "Oh My PoshでWindows Terminalをカスタマイズする(備忘録)"
+nextSlug: "giscus-nextjs"
+nextTitle: "ブログページにコメント機能が付けられる「giscus」をNext.jsで使う"
 ---
 
 お久しぶりです。1年以上ぶりですね。しかも最初の書き直しました！の1ポストのみという...w  
