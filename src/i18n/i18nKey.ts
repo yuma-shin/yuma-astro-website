@@ -33,6 +33,8 @@ enum I18nKey {
 
   more = 'more',
 
+  notfound = 'notfound',
+
   author = 'author',
   publishedAt = 'publishedAt',
   license = 'license',

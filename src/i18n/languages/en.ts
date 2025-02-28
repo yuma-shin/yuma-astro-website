@@ -35,6 +35,7 @@ export const en: Translation = {
   [Key.systemMode]: 'System',
 
   [Key.more]: 'More',
+  [Key.notfound]: 'Not Found',
 
   [Key.author]: 'Author',
   [Key.publishedAt]: 'Published at',

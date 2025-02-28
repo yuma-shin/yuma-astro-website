@@ -35,6 +35,7 @@ export const ja: Translation = {
   [Key.systemMode]: 'システム',
 
   [Key.more]: 'もっと',
+  [Key.notfound]: 'Not Found',
 
   [Key.author]: '作者',
   [Key.publishedAt]: '公開日',
