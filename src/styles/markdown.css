@@ -127,9 +127,6 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 1; /* 2行で省略 */
-    -webkit-box-orient: vertical;
 }
 
 /* PCでは2行で「...」 */
