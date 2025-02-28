@@ -100,7 +100,6 @@ const jsonLd = {
                 <ImageWrapper id="post-cover" src={entry.data.image} basePath={path.join("content/posts/", getDir(entry.id))} class="mb-8 rounded-xl banner-container onload-animation"/>
             }
 
-
             <Markdown class="mb-6 markdown-content onload-animation">
                 <Content />
             </Markdown>
@@ -132,6 +131,8 @@ const jsonLd = {
         </a>
     </div>
 
-    <Comments />
+    <div class="card-base z-10 px-3 md:px-6 pt-6 pb-4 relative w-full">
+        <Comments />
+    </div>
 
 </MainGridLayout>
