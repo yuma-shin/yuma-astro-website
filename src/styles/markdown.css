@@ -91,12 +91,12 @@
 .rlc-container {
     width: 100%;
     max-width: 800px;
-    max-height: 120px;
+    max-height: 130px;
     margin: 0 auto 2rem;
+    background: var(--license-block-bg);
   
     text-decoration: none;
   
-    border: 1px solid;
     border-radius: 0.75rem;
     display: flex;
     align-items: stretch;
@@ -105,13 +105,12 @@
   }
   
   .rlc-container:hover {
-    background-color: rgba(80, 80, 80, 0.1);
-    box-shadow: 0 4px 5px 2px rgba(80, 80, 80, 0.2);
+    background-color: var(--btn-regular-bg-hover);
   }
   
   .rlc-info {
     overflow: hidden;
-    padding: 0.5rem;
+    padding: 1rem;
     text-align: left;
     display: flex;
     flex: 4 1 100px;
@@ -122,19 +121,24 @@
   .rlc-title {
     font-size: 1.25rem;
     white-space: nowrap;
-    overflow: hidden;
+    -webkit-line-clamp: 1;
+    /*overflow: hidden;*/
     text-overflow: ellipsis;
   }
   
   .rlc-description {
     font-size: 0.875rem;
-    /* color: #333; */
-    overflow: hidden;
-    line-height: 1rem;
+    font-weight: 300;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 2行目以降を「...」にする */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 1.3rem;
     height: 2rem;
   }
   
   .rlc-url-container {
+    margin-top: 10px;
     display: flex;
     align-items: center;
   }
@@ -158,6 +162,7 @@
   .rlc-image-container {
     position: relative;
     flex: 1 1 100px;
+    padding: 0.3rem;
   }
   
   .rlc-image {
@@ -168,4 +173,8 @@
     /* tailwind cssのprose内で使う際にmarginがproseで設定されているので無効にする */
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+  }
+
+  .expressive-code{
+    margin-bottom:20px;
   }
