@@ -60,7 +60,7 @@ export default defineConfig({
       Passed: async () => true, // https://github.com/PlayForm/Compress/issues/376
     },
   }), expressiveCode({
-    themes:['aurora-x', 'github-light'],
+    themes:['aurora-x'],
     plugins: [pluginLineNumbers()]
   })],
   markdown: {
