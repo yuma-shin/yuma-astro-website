@@ -14,7 +14,7 @@ const className = Astro.props.class
 </div>
 
 <script>
-    let linkCards = Array.from(document.querySelectorAll(".rlc-container"))
+    let linkCards = Array.from(document.querySelectorAll(".rlc-container")) as HTMLElement[];
     for (let linkCard of linkCards) {
         linkCard.classList.add("no-styling");
         linkCard.style.textDecoration = "none";
