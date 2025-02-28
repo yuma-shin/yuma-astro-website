@@ -9,7 +9,7 @@ draft: false
 lang: 'ja'
 prevSlug: "rewrite-spotlight"
 prevTitle: "個人WEBをTailwind CSSで書き直しました"
-nextSlug: "giscus-nextjs"
+nextSlug: "oh-my-posh"
 nextTitle: "Oh My PoshでWindows Terminalをカスタマイズする(備忘録)"
 ---
 
