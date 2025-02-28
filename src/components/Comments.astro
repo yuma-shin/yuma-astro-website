@@ -16,6 +16,37 @@
 </script>
 
 <script is:inline>
+  function getPreferredTheme() {
+    // ローカルストレージに保存されたテーマを確認
+    if (localStorage.getItem('theme') === 'dark') return 'dark';
+    if (localStorage.getItem('theme') === 'light') return 'light';
+    
+    // システムのカラーモードを確認
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function updateGiscusTheme() {
+    const theme = getPreferredTheme();
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+    
+    iframe.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, 'https://giscus.app');
+  }
+
+  // Astroのカラーモード切り替えイベントを監視
+  const themeObserver = new MutationObserver(updateGiscusTheme);
+  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+  
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateGiscusTheme);
+  
+  // DOMのロードが完了したときにGiscusのテーマを設定
+  window.onload = () => {
+    updateGiscusTheme();
+  };
+</script>
+
+<!-- 
+<script is:inline>
   function updateGiscusTheme() {
     const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'
     const iframe = document.querySelector('iframe.giscus-frame')
@@ -30,3 +61,4 @@
     updateGiscusTheme()
   }
 </script>
+-->

@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["'Zen Kaku Gothic New'", "sans-serif", ...defaultTheme.fontFamily.sans],
+        sans: ["'Inter Variable'","'Zen Kaku Gothic New'", "sans-serif", ...defaultTheme.fontFamily.sans],
       },
     },
   },
