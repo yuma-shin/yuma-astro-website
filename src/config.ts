@@ -77,6 +77,16 @@ export const profileConfig: ProfileConfig = {
       icon: 'fa6-brands:github',
       url: 'https://github.com/yuma-shintani',
     },
+    {
+      name: 'Qiita',
+      icon: 'simple-icons:qiita',
+      url: 'https://qiita.com/y-shin',
+    },
+    {
+      name: 'Ollama',
+      icon: 'simple-icons:ollama',
+      url: 'https://ollama.com/yuma',
+    }
   ],
 }
 
