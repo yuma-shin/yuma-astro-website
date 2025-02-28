@@ -19,7 +19,7 @@ nextTitle: "Oh My PoshでWindows Terminalをカスタマイズする(備忘録)"
 
 GithubのDiscussion機能を活用したコメントシステムです。Githubアカウントがあればコメントやリアクションができるようになります。
 
-::linkcard{url="https://giscus.app" name="giscus"}
+https://giscus.app
 
 # giscusの設定
 
@@ -32,6 +32,8 @@ Next.jsでの使用方法
 2. 以下のリンクにアクセスしgiscusをインストールする  
 
    ::linkcard{url="https://github.com/apps/giscus" name="giscus | Github App"}
+
+https://github.com/apps/giscus
 
    ![img](./01.png)
 
@@ -79,11 +81,11 @@ Next.jsでの使用方法
 npm install @giscus/react
 ```
 
-2. `giscus.jsx`を作成する。  
+1. `giscus.jsx`を作成する。  
    `.env`ファイルにリポジトリ名、リポジトリID、カテゴリ、カテゴリIDを定義している。  
    また、Light / Drak Modeに対応させるため、`theme`の部分は可変にしている。
 
-```javascript
+```javascript title="giscus.jsx"
 import Giscus from '@giscus/react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
@@ -119,7 +121,7 @@ export const Comment = () => {
 
 3. `page.jsx`に作成したコンポーネントを追加する。
 
-```js [titles]
+```js title="page.jsx"
 const Giscus = dynamic(() => import('@/app/giscus').then((m) => m.Comment), {
   ssr: false,
 })
