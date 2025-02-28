@@ -27,20 +27,20 @@ HTMLでちょこちょこアップデートしてきた個人WEBサイトを、
 記事を追加したいときはmicroCMSの管理画面からということで管理も楽で即採用しました。
 webhookにも対応しているのもありがたいですね。
 
-::linkcard{url="https://microcms.io/" name="MicroCMS"}
+https://microcms.io/
 
 # Chakra UI
 
 React用のUIコンポーネントライブラリです。スタイルがコンポーネント化されていてUIに一貫性を持たせやすくしたライブラリになっています。今までCSSでゴリゴリ書いていたスタイルがタグ指定だけで実現できるのは驚きでした。
 
-::linkcard{url="https://chakra-ui.com/" name="Chakra UI"}
+https://chakra-ui.com/
 
 # Vercel
 
 WEBホスティングサービスでは定番らしいです。Githubリポジトリと連携させて変更があれば自動でデプロイが走り常に最新状態のページが表示できるようになります。
 自分はmicroCMSのwebhookとも連携させて、記事を追加した際にもデプロイが走るように設定しました。
 
-::linkcard{url="https://vercel.com/" name="Vercel"}
+https://vercel.com/
 
 # おわりに
 
@@ -48,6 +48,6 @@ WEBホスティングサービスでは定番らしいです。Githubリポジ�
 
 # 参考にさせて頂いたありがたい記事
 
-::linkcard{url="https://qlitre-weblog.com/next-microcms-blog-w-chakra-matome" name="【まとめ】Next.js, microCMS, Chakra UIで作るブログ"}
+https://qlitre-weblog.com/next-microcms-blog-w-chakra-matome
 
-::linkcard{url="https://blog.microcms.io/microcms-next-jamstack-blog/" name="microCMS + Next.jsでJamstackブログを作ってみよう"}
+https://blog.microcms.io/microcms-next-jamstack-blog/

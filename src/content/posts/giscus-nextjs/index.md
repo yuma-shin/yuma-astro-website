@@ -31,8 +31,6 @@ Next.jsでの使用方法
 
 2. 以下のリンクにアクセスしgiscusをインストールする  
 
-   ::linkcard{url="https://github.com/apps/giscus" name="giscus | Github App"}
-
 https://github.com/apps/giscus
 
    ![img](./01.png)
@@ -140,7 +138,8 @@ export default function Home() {
 
 # 参考にさせていただいたサイト
 
-::linkcard{url="https://giscus.app" name="giscus"}
-::linkcard{url="https://blog.k-bushi.com/post/tech/web/instoducing-giscus-with-hugo-stack/" name="HugoのStackテーマのブログにgiscusを導入する"}
-::github{repo="giscus/giscus-component"}
+https://giscus.app
 
+https://blog.k-bushi.com/post/tech/web/instoducing-giscus-with-hugo-stack/
+
+::github{repo="giscus/giscus-component"}

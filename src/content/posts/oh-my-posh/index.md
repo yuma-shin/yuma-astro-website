@@ -260,7 +260,14 @@ Install-Module -Name Terminal-Icons -Repository PSGallery
 
 3. 以下のコマンドを追記する
 
-```powershell title="user_profile.ps1"
+```powershell title="user_profile.ps1" ins={8-9}
+# set PowerShell to UTF-8
+[console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
+
+# Prompt
+$omp_config = Join-Path $PSScriptRoot ".\user.omp.json"
+oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
+
 # Terminal Icons
 Import-Module -Name Terminal-Icons
 ```
@@ -270,10 +277,6 @@ Import-Module -Name Terminal-Icons
 
 # 参考にさせていただいたサイト・動画
 
-::linkcard{url="https://learn.microsoft.com/ja-jp/windows/terminal/tutorials/custom-prompt-setup#customize-your-powershell-prompt-with-oh-my-posh" name="チュートリアル - Oh My Posh を使用して PowerShell または WSL のカスタム プロンプトを設定する"}
-
-::linkcard{url="https://www.youtube.com/watch?v=5-aK2_WwrmM" name="How to set up PowerShell prompt with Oh My Posh on Windows 11"}
-
-https://www.youtube.com/watch?v=5-aK2_WwrmM
+<iframe width="100%" height="468" src="https://www.youtube.com/embed/5-aK2_WwrmM?si=8K7wIFxGbdiYxkZx" title="YouTube video player" frameborder="0" allowfullscreen class="mb-2"></iframe>
 
 https://learn.microsoft.com/ja-jp/windows/terminal/tutorials/custom-prompt-setup#customize-your-powershell-prompt-with-oh-my-posh

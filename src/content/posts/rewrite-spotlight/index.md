@@ -34,4 +34,4 @@ Tailwind UIが提供しているポートフォリオテンプレートです。
 $99で日本円で17,002円で購入しました。円安を感じますね...  
 ブログページはマークダウン記法で記述できます。ページネーションやスタイルの適用もやってくれるので楽ですね。
 
-::linkcard{url="https://tailwindui.com/templates/spotlight" name="Tailwind UI Spotlight"}
+https://tailwindui.com/templates/spotlight
