@@ -346,9 +346,8 @@ import Comments from '../../components/Comments.astro';
 
 FuwariデフォルトのコードブロックはLanguageやファイル名を表示できないため、`astro-expressive-code`を使用してカスタマイズしました。
 
-以下で記事にしています。
-
-https://www.y-shin.net/posts/fuwari-expressive-code
+以下で記事にしています。  
+[FuwariでExpressive Codeを使用しコードブロックをカスタマイズする](/posts/fuwari-expressive-code/)
 
 # おわりに
 
