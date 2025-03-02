@@ -111,10 +111,7 @@ remarkPlugins: [
     overflow: hidden; /* PCではhidden */
     padding: 1rem;
     text-align: left;
-    display: flex;
     flex: 4 1 100px;
-    flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
     text-decoration: none;
     min-height: 100px; /* スマホ時に高さ不足にならないように */
@@ -132,7 +129,7 @@ remarkPlugins: [
     font-size: 0.875rem;
     font-weight: 300;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* 2行で省略 */
+    -webkit-line-clamp: 1; /* 2行で省略 */
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     line-height: 1.4rem; /* 行の高さを適切に調整 */
@@ -192,7 +189,7 @@ remarkPlugins: [
         flex: none;
         width: 100%;
         height: 150px;
-        padding: 0;
+        padding: 0.5rem;
     }
 
     .rlc-image {
