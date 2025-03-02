@@ -26,11 +26,6 @@ export type SiteConfig = {
   }
 
   favicon: Favicon[]
-  siteOGImage: {
-    enable: boolean
-    src: string
-  }
-  postOGImageDynamic: boolean
 }
 
 export type Favicon = {
