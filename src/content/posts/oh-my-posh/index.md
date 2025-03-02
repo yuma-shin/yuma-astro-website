@@ -17,7 +17,7 @@ nextTitle: "個人WEBをAstro + Fuwariで書き直しました"
 
 Oh My Posh は、Windows、Mac、Linux で使える シェルプロンプトのカスタマイズツール です。PowerShell、Bash、Zsh、Fish などに対応しており、カラフルで見やすいプロンプトを簡単に設定できます。
 
-# ファイルツリー
+# ディレクトリツリー
 
 ```
 %USERPROFILE%
