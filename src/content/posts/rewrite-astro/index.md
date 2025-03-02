@@ -7,6 +7,8 @@ tags: [Astro, Tailwind CSS, Fuwari]
 category: 'Web Site'
 draft: false 
 lang: 'ja'
+prevSlug: "oh-my-posh"
+prevTitle: "Oh My PoshでWindows Terminalをカスタマイズする(備忘録)"
 ---
 
 個人WEBをTailwind CSSで書き直して約半年...  
