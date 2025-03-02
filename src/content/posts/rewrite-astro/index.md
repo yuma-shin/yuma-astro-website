@@ -124,7 +124,7 @@ remarkPlugins: [
     overflow: hidden;
 }
 
-/* PCでは2行で「...」 */
+/* PCでは1行で「...」 */
 .rlc-description {
     font-size: 0.875rem;
     font-weight: 300;
@@ -137,6 +137,7 @@ remarkPlugins: [
     overflow: hidden;
     flex-grow: 1; /* 説明文が途切れないように */
     padding-bottom: 4px; /* PC時の圧迫を防ぐ */
+    color: var(--tw-prose-body)
 }
 
 .rlc-url-container {
