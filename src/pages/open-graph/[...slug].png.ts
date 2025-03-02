@@ -5,31 +5,35 @@ import { getCollection } from 'astro:content'
 import { Resvg } from '@resvg/resvg-js'
 import { siteConfig } from '@/config'
 
+import fs from 'fs';
+import path from 'path';
+
 /* TTF, OTF and WOFF, this import may not compatible with all static pages services (?) */
-// import Roboto300 from 'node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff'
-// import Roboto700 from 'node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff'
-//import IBMPlexSansJP300 from 'node_modules/@fontsource/ibm-plex-sans-jp/files/ibm-plex-sans-jp-japanese-300-normal.woff'
-//import IBMPlexSansJP700 from 'node_modules/@fontsource/ibm-plex-sans-jp/files/ibm-plex-sans-jp-japanese-700-normal.woff'
+//import Roboto300 from 'node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff'
+//import Roboto700 from 'node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff'
+//import ZenKakuGothicNew300 from 'node_modules/@fontsource/zen-kaku-gothic-new/files/zen-kaku-gothic-new-10-300-normal.woff'
+//import ZenKakuGothicNew700 from 'node_modules/@fontsource/zen-kaku-gothic-new/files/zen-kaku-gothic-new-10-700-normal.woff'
+
+const Roboto300 = fs.readFileSync(path.resolve('node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff'));
+const Roboto700 = fs.readFileSync(path.resolve('node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff'));
 
 const ogOptions: SatoriOptions = {
   width: 1200,
   height: 630,
   // debug: true,
   fonts: [
-    /*
     {
-      name: 'IBM Plex Sans JP',
-      data: Buffer.from(IBMPlexSansJP300),
-      weight: 400,
+      name: 'Roboto',
+      data: Roboto300,
+      weight: 300,
       style: 'normal',
     },
     {
-      name: 'IBM Plex Sans JP',
-      data: Buffer.from(IBMPlexSansJP700),
+      name: 'Roboto',
+      data: Roboto700,
       weight: 700,
       style: 'normal',
     },
-    */
   ],
 }
 
@@ -43,7 +47,7 @@ const markup = (
   /* Satori uses tailwind! Create or view a desing using https://og-playground.vercel.app/ */
   html`
   <div tw="flex flex-col w-full h-full items-center justify-center bg-[#0c0d13] p-8">
-    <div tw="flex items-center px-20 w-full h-full bg-[#1c1c24] rounded-xl drop-shadow-xl">
+    <div tw="flex items-center px-20 w-full h-full bg-[#1c1c24] rounded-xl shadow-xl">
       <div tw="flex flex-col text-white">
         <span tw="text-7xl font-bold">${title}</span>
         <span tw="text-4xl">${description}</span>
