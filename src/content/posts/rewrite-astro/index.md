@@ -74,51 +74,39 @@ AstroではRemark Pluginが使用できるため、今回は定番の`remark-lin
 2. `src/components/Comments.astro`を作成する
 
 ```javascript title="Comments.astro"
-<script src="https://giscus.app/client.js"
-    is:inline
-    data-repo={import.meta.env.NEXT_PUBLIC_GISCUS_REPO}
-    data-repo-id={import.meta.env.NEXT_PUBLIC_GISCUS_REPO_ID}
-    data-category="Announcements"
-    data-category-id={import.meta.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID}
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="bottom"
-    data-lang="ja"
-    crossorigin="anonymous"
-    data-theme="preferred_color_scheme"
-    async>
-</script>
+<section>
+  <script src="https://giscus.app/client.js"
+      is:inline
+      data-repo={import.meta.env.NEXT_PUBLIC_GISCUS_REPO}
+      data-repo-id={import.meta.env.NEXT_PUBLIC_GISCUS_REPO_ID}
+      data-category="Announcements"
+      data-category-id={import.meta.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID}
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-lang="ja"
+      crossorigin="anonymous"
+      data-theme="preferred_color_scheme"
+      async>
+  </script>
+</section>
 
 <script is:inline>
-  function getPreferredTheme() {
-    // ローカルストレージに保存されたテーマを確認
-    if (localStorage.getItem('theme') === 'dark') return 'dark';
-    if (localStorage.getItem('theme') === 'light') return 'light';
-    
-    // システムのカラーモードを確認
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
   function updateGiscusTheme() {
-    const theme = getPreferredTheme();
-    const iframe = document.querySelector('iframe.giscus-frame');
-    if (!iframe) return;
-    
-    iframe.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, 'https://giscus.app');
+    const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+    const iframe = document.querySelector('iframe.giscus-frame')
+    if (!iframe) return
+    iframe.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, 'https://giscus.app')
   }
 
-  // Astroのカラーモード切り替えイベントを監視
-  const themeObserver = new MutationObserver(updateGiscusTheme);
-  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-  
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateGiscusTheme);
-  
-  // DOMのロードが完了したときにGiscusのテーマを設定
+  const observer = new MutationObserver(updateGiscusTheme)
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+
   window.onload = () => {
-    updateGiscusTheme();
-  };
+    updateGiscusTheme()
+  }
 </script>
 ```
 
@@ -173,3 +161,7 @@ FuwariデフォルトのコードブロックはLanguageやファイル名を表
 
 Astroは今回のサイトのリメイクで初めて触れましたが、比較的入りやすかったです。  
 まだ深く理解できていないので今後も色々作りながら学んでいければと思っています。
+
+# 参考にさせていただいたありがたいサイト
+
+https://www.maxpou.fr/blog/giscus-with-astro/
