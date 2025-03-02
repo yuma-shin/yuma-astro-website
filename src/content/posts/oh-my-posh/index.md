@@ -7,10 +7,6 @@ tags: [Oh My Posh,Terminal]
 category: 'Terminal'
 draft: false 
 lang: 'ja'
-prevSlug: "rewrite-spotlight"
-prevTitle: "ブログページにコメント機能が付けられる「giscus」をNext.jsで使う"
-nextSlug: "rewrite-astro"
-nextTitle: "個人WEBをAstro + Fuwariで書き直しました"
 ---
 
 # Oh My Poshとは
