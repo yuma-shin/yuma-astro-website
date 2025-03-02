@@ -3,12 +3,12 @@ title: FuwariでExpressive Codeを使用しコードブロックをカスタマ�
 published: 2025-03-02
 description: 'FuwariでExpressive Codeを使用しコードブロックをカスタマイズしてみました。'
 image: './cover.webp'
-tags: [Astro, Tailwind CSS, Fuwari]
+tags: [expressive-code, Astro, Fuwari]
 category: 'Web Site'
 draft: false 
 lang: 'ja'
-prevSlug: "rewrite-astro"
-prevTitle: "個人WEBをAstro + Fuwariで書き直しました"
+prevSlug: "fuwari-link-card"
+prevTitle: "Fuwariでremark-link-cardを使用してリンクカードを実装する"
 ---
 
 FuwariのデフォルトコードブロックはLanguageやファイル名を表示できないため、`astro-expressive-code`を利用してカスタマイズしてみました。
