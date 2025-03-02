@@ -14,6 +14,7 @@ import ImageWrapper from '../../components/misc/ImageWrapper.astro'
 import { profileConfig, siteConfig } from '../../config'
 import { formatDateToYYYYMMDD } from '../../utils/date-utils'
 import Comments from '../../components/Comments.astro';
+import EditOnGithub from '@components/misc/EditOnGithub.astro'
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('posts', ({ data }) => {
@@ -105,6 +106,7 @@ const jsonLd = {
             </Markdown>
 
             {licenseConfig.enable && <License title={entry.data.title} slug={entry.slug} pubDate={entry.data.published} class="mb-6 rounded-xl license-container onload-animation"></License>}
+            <EditOnGithub path={entry.id} />
 
         </div>
     </div>

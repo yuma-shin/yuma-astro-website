@@ -34,7 +34,12 @@ export const siteConfig: SiteConfig = {
     //   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
     //   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
     // }
-  ]
+  ],
+  siteOGImage:{
+    enable: true,
+    src: '/cover.png',
+  },
+  postOGImageDynamic: true,
 }
 
 export const navBarConfig: NavBarConfig = {
