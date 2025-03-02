@@ -62,7 +62,7 @@ AstroではRemark Pluginが使用できるため、今回は定番の`remark-lin
 
 1. `remark-link-card`をインストールする。
 
-```powershell
+```powershell frame=none showLineNumbers=false
 pnpm add remark-link-card
 ```
 
@@ -343,7 +343,7 @@ FuwariデフォルトのコードブロックはLanguageやファイル名を表
 
 1. 以下のコマンドで`astro-expressive-code`と`@expressive-code/plugin-line-numbers`をインストールする
 
-```powershell
+```powershell frame="none" showLineNumbers=false
 pnpm add astro-expressive-code @expressive-code/plugin-line-numbers
 ```
 
