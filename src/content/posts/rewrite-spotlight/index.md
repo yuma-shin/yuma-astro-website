@@ -7,10 +7,6 @@ tags: [Tailwind CSS, Tailwind UI, Spotlight]
 category: 'Web Site'
 draft: false 
 lang: 'ja'
-prevSlug: "rewrite-nextjs"
-prevTitle: "個人WEBをNext.js + Chakra UIで書き直しました"
-nextSlug: "giscus-nextjs"
-nextTitle: "ブログページにコメント機能が付けられる「giscus」をNext.jsで使う"
 ---
 
 お久しぶりです。1年以上ぶりですね。しかも最初の書き直しました！の1ポストのみという...w  
