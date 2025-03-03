@@ -16,22 +16,25 @@ import path from 'path';
 //const Roboto300 = fs.readFileSync(path.resolve('node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff'));
 //const Roboto700 = fs.readFileSync(path.resolve('node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff'));
 
-const ZenKakuGothicNew300 = fs.readFileSync(path.resolve('node_modules/@fontsource/zen-kaku-gothic-new/files/zen-kaku-gothic-new-10-300-normal.woff'));
-const ZenKakuGothicNew700 = fs.readFileSync(path.resolve('node_modules/@fontsource/zen-kaku-gothic-new/files/zen-kaku-gothic-new-10-700-normal.woff'));
+//const ZenKakuGothicNew300 = fs.readFileSync(path.resolve('node_modules/@fontsource/zen-kaku-gothic-new/files/zen-kaku-gothic-new-10-300-normal.woff'));
+//const ZenKakuGothicNew700 = fs.readFileSync(path.resolve('node_modules/@fontsource/zen-kaku-gothic-new/files/zen-kaku-gothic-new-10-700-normal.woff'));
+
+const Round1C300 = fs.readFileSync("./src/pages/open-graph/MPLUSRounded1cLight.ttf")
+const Round1C700 = fs.readFileSync("./src/pages/open-graph/MPLUSRounded1cBold.ttf")
 
 const ogOptions: SatoriOptions = {
   width: 1200,
   height: 630,
   fonts: [
     {
-      name: 'Zen Kaku Gothic New',
-      data: ZenKakuGothicNew300, // Buffer.from は省略、すでにバッファとして読み込まれている
+      name: '"M PLUS Rounded 1c"',
+      data: Round1C300, // Buffer.from は省略、すでにバッファとして読み込まれている
       weight: 300,
       style: 'normal',
     },
     {
-      name: 'Zen Kaku Gothic New',
-      data: ZenKakuGothicNew700,
+      name: '"M PLUS Rounded 1c"',
+      data: Round1C700,
       weight: 700,
       style: 'normal',
     },
@@ -78,6 +81,8 @@ async function getOpenGraphData() {
           ogOptions,
         )
         const png = new Resvg(svg).render().asPng()
+
+        console.log(svg)
 
         return new Response(png, {
           headers: {
