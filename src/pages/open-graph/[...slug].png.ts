@@ -12,22 +12,26 @@ import path from 'path';
 //import Roboto700 from 'node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff'
 //import IBMPlexSansJP300 from 'node_modules/@fontsource/ibm-plex-sans-jp/files/ibm-plex-sans-jp-latin-300-normal.woff'
 //import IBMPlexSansJP700 from 'node_modules/@fontsource/ibm-plex-sans-jp/files/ibm-plex-sans-jp-latin-700-normal.woff'
-const Roboto300 = fs.readFileSync(path.resolve('node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff'));
-const Roboto700 = fs.readFileSync(path.resolve('node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff'));
+//import test from 'node_modules/@fontsource/zen-kaku-gothic-new/files/zen-kaku-gothic-new-10-300-normal.woff'
+//const Roboto300 = fs.readFileSync(path.resolve('node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff'));
+//const Roboto700 = fs.readFileSync(path.resolve('node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff'));
+
+const ZenKakuGothicNew300 = fs.readFileSync(path.resolve('node_modules/@fontsource/zen-kaku-gothic-new/files/zen-kaku-gothic-new-10-300-normal.woff'));
+const ZenKakuGothicNew700 = fs.readFileSync(path.resolve('node_modules/@fontsource/zen-kaku-gothic-new/files/zen-kaku-gothic-new-10-700-normal.woff'));
 
 const ogOptions: SatoriOptions = {
   width: 1200,
   height: 630,
   fonts: [
     {
-      name: 'Roboto',
-      data: Roboto300, // Buffer.from は省略、すでにバッファとして読み込まれている
+      name: '"Zen Kaku Gothic New"',
+      data: ZenKakuGothicNew300, // Buffer.from は省略、すでにバッファとして読み込まれている
       weight: 300,
       style: 'normal',
     },
     {
-      name: 'Roboto',
-      data: Roboto700,
+      name: '"Zen Kaku Gothic New"',
+      data: ZenKakuGothicNew700,
       weight: 700,
       style: 'normal',
     },
