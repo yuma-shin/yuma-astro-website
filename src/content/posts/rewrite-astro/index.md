@@ -62,7 +62,8 @@ FuwariではリンクカードはGithubのみの対応のため、その他の�
 AstroではRemark Pluginが使用できるため、今回は定番の`remark-link-card`を使用しました。
 
 以下で記事にしています。  
-[Fuwariでremark-link-cardを使用してリンクカードを実装する](/posts/fuwari-link-card/)
+
+https://www.y-shin.net/posts/fuwari-link-card/
 
 ## ブログページにコメント機能をつける
 
@@ -155,7 +156,8 @@ import Comments from '../../components/Comments.astro';
 FuwariデフォルトのコードブロックはLanguageやファイル名を表示できないため、`astro-expressive-code`を使用してカスタマイズしました。
 
 以下で記事にしています。  
-[FuwariでExpressive Codeを使用しコードブロックをカスタマイズする](/posts/fuwari-expressive-code/)
+
+https://www.y-shin.net/posts/fuwari-expressive-code/
 
 # おわりに
 
