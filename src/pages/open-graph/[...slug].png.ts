@@ -120,8 +120,6 @@ async function getOpenGraphData() {
         )
         const png = new Resvg(svg).render().asPng()
 
-        console.log(svg)
-
         return new Response(png, {
           headers: {
             'Content-Type': 'image/png',
