@@ -24,13 +24,13 @@ const ogOptions: SatoriOptions = {
   height: 630,
   fonts: [
     {
-      name: '"Zen Kaku Gothic New"',
+      name: 'Zen Kaku Gothic New',
       data: ZenKakuGothicNew300, // Buffer.from は省略、すでにバッファとして読み込まれている
       weight: 300,
       style: 'normal',
     },
     {
-      name: '"Zen Kaku Gothic New"',
+      name: 'Zen Kaku Gothic New',
       data: ZenKakuGothicNew700,
       weight: 700,
       style: 'normal',
