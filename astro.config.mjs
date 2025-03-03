@@ -19,6 +19,7 @@ import { LinkCardComponent } from "./src/plugins/rehype-component-linkcard.mjs";
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
+import { rawFonts } from './src/plugins/vite-raw-fonts.mjs';
 
 import expressiveCode from "astro-expressive-code";
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
@@ -131,5 +132,6 @@ export default defineConfig({
         },
       },
     },
+    plugns:[rawFonts(['.woff2', '.ttf', '.woff', '.otf'])]
   },
 });
