@@ -46,21 +46,59 @@ const markup = (
   published: Date,
   description?: string,
   category?: string,
-  tags?: string[],
+  tags?: string[]
 ) =>
-  /* Satori uses tailwind! Create or view a desing using https://og-playground.vercel.app/ */
   html`
-    <div tw="flex flex-col w-full h-full justify-center bg-amber-800">
-      <div tw="bg-gray-50 flex w-full">
-        <div tw="flex flex-col md:flex-row w-full py-12 px-8 items-center">
-          <h2 tw="flex flex-col font-bold tracking-tight text-gray-900 text-left">
-            <span tw="text-3xl">${title}</span>
-            <span tw="text-amber-600 font-light text-xl">${description}</span>
-          </h2>
+    <div
+      style="
+        width: 1200px;
+        height: 630px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        color: white;
+        padding: 40px;
+        text-align: center;
+      "
+    >
+      <div
+        style="
+          width: 80%;
+          max-width: 1000px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: rgba(255, 255, 255, 0.2);
+          padding: 20px;
+          border-radius: 12px;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        "
+      >
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <h1 style="font-size: 48px; font-weight: bold; margin-bottom: 10px;">
+            ${title}
+          </h1>
+          <p style="font-size: 24px; opacity: 0.9;">
+            ${description ? description: ""}
+          </p>
+        </div>
+        <div
+            style="
+                margin-top: 20px;
+                font-size: 16px;
+                opacity: 0.7;
+                display: flex;
+                justify-content: center;
+            "
+            >
+            <p style="margin-right:100px">Yuma Shintani</p>
+            <p style="margin-left:100px">Published on ${published.toDateString()}</p>
         </div>
       </div>
     </div>
-  `
+  `;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
