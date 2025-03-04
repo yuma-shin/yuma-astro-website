@@ -1,5 +1,6 @@
 import type { LIGHT_DARK_MODE } from "@/types/config";
 import { AUTO_MODE, DARK_MODE, DEFAULT_THEME, LIGHT_MODE } from "@constants/constants.ts";
+import { expressiveCodeConfig } from '@/config'
 
 export function getDefaultHue(): number {
   const fallback = "250";
@@ -37,6 +38,14 @@ export function applyThemeToDocument(theme: LIGHT_DARK_MODE) {
       }
       break;
   }
+
+  // Set the theme for Expressive Code
+  const isDarkMode = document.documentElement.classList.contains('dark')
+  console.log(Number(isDarkMode))
+  document.documentElement.setAttribute(
+    'data-theme',
+    expressiveCodeConfig.themes[Number(isDarkMode)],
+  )
 }
 
 export function setTheme(theme: LIGHT_DARK_MODE): void {
