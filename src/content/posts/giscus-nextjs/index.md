@@ -1,12 +1,12 @@
 ---
 title: ブログページにコメント機能が付けられる「giscus」をNext.jsで使う
 published: 2024-10-25
-description: 'ブログページにコメント機能が付けられる「giscus」をNext.jsで使う'
-image: './giscus-nextjs.webp'
+description: "ブログページにコメント機能が付けられる「giscus」をNext.jsで使う"
+image: "./giscus-nextjs.webp"
 tags: [giscus, Next.js]
-category: 'Web Site'
-draft: false 
-lang: 'ja'
+category: "Web Site"
+draft: false
+lang: "ja"
 prevSlug: "rewrite-spotlight"
 prevTitle: "個人WEBをTailwind CSSで書き直しました"
 nextSlug: "oh-my-posh"
@@ -29,11 +29,11 @@ Next.jsでの使用方法
 
 1. giscusを導入するリポジトリを公開設定(`public`)にする。
 
-2. 以下のリンクにアクセスしgiscusをインストールする  
+2. 以下のリンクにアクセスしgiscusをインストールする
 
 https://github.com/apps/giscus
 
-   ![img](./01.png)
+![img](./01.png)
 
 3. 対象のユーザを選択する。
 
@@ -84,21 +84,21 @@ npm install @giscus/react
    また、Light / Drak Modeに対応させるため、`theme`の部分は可変にしている。
 
 ```javascript title="giscus.jsx"
-import Giscus from '@giscus/react'
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import Giscus from "@giscus/react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export const Comment = () => {
-  const { theme, systemTheme } = useTheme()
-  const [giscusTheme, setGiscusTheme] = useState('light')
+  const { theme, systemTheme } = useTheme();
+  const [giscusTheme, setGiscusTheme] = useState("light");
 
   useEffect(() => {
     // themeが'system'の場合は、システムのテーマに基づいてGiscusのテーマを決定
-    const resolvedTheme = theme === 'system' ? systemTheme : theme
+    const resolvedTheme = theme === "system" ? systemTheme : theme;
 
     // Giscusのテーマを設定
-    setGiscusTheme(resolvedTheme === 'dark' ? 'dark' : 'light')
-  }, [theme, systemTheme])
+    setGiscusTheme(resolvedTheme === "dark" ? "dark" : "light");
+  }, [theme, systemTheme]);
 
   return (
     <Giscus
@@ -113,23 +113,23 @@ export const Comment = () => {
       inputPosition="bottom"
       theme={giscusTheme} // 動的にテーマを変更
     />
-  )
-}
+  );
+};
 ```
 
 3. `page.jsx`に作成したコンポーネントを追加する。
 
 ```js title="page.jsx"
-const Giscus = dynamic(() => import('@/app/giscus').then((m) => m.Comment), {
+const Giscus = dynamic(() => import("@/app/giscus").then((m) => m.Comment), {
   ssr: false,
-})
+});
 
 export default function Home() {
   return (
     <main>
       <Giscus />
     </main>
-  )
+  );
 }
 ```
 

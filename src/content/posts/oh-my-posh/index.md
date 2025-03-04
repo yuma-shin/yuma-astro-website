@@ -1,12 +1,12 @@
 ---
 title: Oh My PoshでWindows Terminalをカスタマイズする(備忘録)
 published: 2025-02-25
-description: 'Oh My Poshを使用してWindows Terminalをカスタマイズする方法を備忘録として残しておきます。'
-image: './terminal.webp'
-tags: [Oh My Posh,Terminal]
-category: 'Terminal'
-draft: false 
-lang: 'ja'
+description: "Oh My Poshを使用してWindows Terminalをカスタマイズする方法を備忘録として残しておきます。"
+image: "./terminal.webp"
+tags: [Oh My Posh, Terminal]
+category: "Terminal"
+draft: false
+lang: "ja"
 prevSlug: "rewrite-spotlight"
 prevTitle: "ブログページにコメント機能が付けられる「giscus」をNext.jsで使う"
 nextSlug: "rewrite-astro"
@@ -41,10 +41,10 @@ C:\
 # 2. Nerd Font をインストールする
 
 1. 以下のリポジトリから`Hack.zip`をダウンロードする  
-::github{repo="ryanoasis/nerd-fonts"}
+   ::github{repo="ryanoasis/nerd-fonts"}
 
 2. ダウンロードしたZIPファイルを展開し、`HackNerdFontMono-Regular.ttf`をダブルクリックし`インストール`をクリックする
-![](./font.png)
+   ![](./font.png)
 
 # 3. Windows Terminalの設定を変更する
 
@@ -53,17 +53,18 @@ C:\
 2. `設定`をクリックする
 
 3. `スタートアップ`で規定のプロファイルを先程インストールした`PowerShell`に変更する
-![](./terminal01.png)
+   ![](./terminal01.png)
 
 4. プロファイルで`PowerShell`を選択し、下部の`外観`をクリックする
-![](./terminal02.png)
+   ![](./terminal02.png)
 
 5. フォントフェイスを`Hack Nerd Font Mono`に変更し`保存`をクリックする
-![](./terminal03.png)
+   ![](./terminal03.png)
 
 # 4. Oh My Poshをインストールする
 
 1. wingetを利用してOh My Poshをインストールする
+
 ```powershell
 winget install JanDeDobbeleer.OhMyPosh
 ```
@@ -71,6 +72,7 @@ winget install JanDeDobbeleer.OhMyPosh
 2. `%UserProfile%\.config\powershell`に`user_profile.ps1`を作成する
 
 3. 以下のスクリプトをコピペする
+
 ```powershell title="user_profile.ps1"
 # set PowerShell to UTF-8
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
@@ -83,6 +85,7 @@ oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
 4. `%UserProfile%\.config\powershell`に`user.omp.json`を作成する
 
 5. 以下のJSONをコピペする
+
 ```json title="user.omp.json"
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
@@ -139,12 +142,7 @@ oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
           "background": "#FFFB38",
           "type": "git",
           "style": "powerline",
-          "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb95{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#c5e478{{ end }}",
-            "{{ if gt .Ahead 0 }}#C792EA{{ end }}",
-            "{{ if gt .Behind 0 }}#C792EA{{ end }}"
-          ]
+          "background_templates": ["{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb95{{ end }}", "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#c5e478{{ end }}", "{{ if gt .Ahead 0 }}#C792EA{{ end }}", "{{ if gt .Behind 0 }}#C792EA{{ end }}"]
         }
       ]
     },
@@ -230,28 +228,32 @@ oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
 ```
 
 6. 以下のコマンドでPowerShellプロファイルを作成する
+
 ```powershell
 new-item -type file -path $profile -force
 ```
 
 7. 以下のコマンドを入力し作成したプロファイルを編集します
+
 ```powershell
 notepad $PROFILE
 ```
 
 8. 以下のコマンドをコピペする
+
 ```powershell
 . $env:USERPROFILE\.config\powershell\user_profile.ps1
 ```
 
 9. Terminalを再起動しデザインが反映されていることを確認する
-![](./terminal04.png)
+   ![](./terminal04.png)
 
 # 5. Terminal Iconsをインストールする
 
 Terminal Iconsをインストールすることで不足しているフォルダまたはファイルのアイコンを追加することが出来ます。
 
 1. 以下のコマンドでTerminal Iconsをインストールする
+
 ```powershell
 Install-Module -Name Terminal-Icons -Repository PSGallery
 ```
@@ -273,7 +275,7 @@ Import-Module -Name Terminal-Icons
 ```
 
 4. Terminalを再起動し、`ls`コマンドを入力後、アイコンが適用されていることを確認する
-![](./terminal05.png)
+   ![](./terminal05.png)
 
 # 参考にさせていただいたサイト・動画
 

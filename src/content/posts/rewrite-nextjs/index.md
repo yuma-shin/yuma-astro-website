@@ -1,12 +1,12 @@
 ---
 title: 個人WEBをNext.js + Chakra UIで書き直しました
 published: 2023-01-07
-description: 'あけましておめでとうございます！ HTMLでちょこちょこアップデートしてきた個人WEBサイトを、 勉強も兼ねてNext.jsとChakra UIで書き直しました。'
-image: './nextjs.webp'
+description: "あけましておめでとうございます！ HTMLでちょこちょこアップデートしてきた個人WEBサイトを、 勉強も兼ねてNext.jsとChakra UIで書き直しました。"
+image: "./nextjs.webp"
 tags: [ChakraUI, Next.js]
-category: 'Web Site'
-draft: false 
-lang: 'ja'
+category: "Web Site"
+draft: false
+lang: "ja"
 nextSlug: "rewrite-spotlight"
 nextTitle: "個人WEBをTailwind CSSで書き直しました"
 ---

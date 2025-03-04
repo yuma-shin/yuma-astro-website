@@ -1,12 +1,12 @@
 ---
 title: 個人WEBをAstro + Fuwariで書き直しました
 published: 2025-02-28
-description: '個人WEBをAstro + Fuwariで書き直しました'
-image: './fuwari.png'
+description: "個人WEBをAstro + Fuwariで書き直しました"
+image: "./fuwari.png"
 tags: [Astro, Tailwind CSS, Fuwari]
-category: 'Web Site'
-draft: false 
-lang: 'ja'
+category: "Web Site"
+draft: false
+lang: "ja"
 prevSlug: "oh-my-posh"
 prevTitle: "Oh My PoshでWindows Terminalをカスタマイズする(備忘録)"
 nextSlug: "fuwari-linkcard"
@@ -61,7 +61,7 @@ Fuwariのリポジトリで右上の`Use this template`をクリックするこ�
 FuwariではリンクカードはGithubのみの対応のため、その他のサイトもリンクカードとして表示させるカスタマイズを入れました。  
 AstroではRemark Pluginが使用できるため、今回は定番の`remark-link-card`を使用しました。
 
-以下で記事にしています。  
+以下で記事にしています。
 
 https://www.y-shin.net/posts/fuwari-link-card/
 
@@ -70,7 +70,7 @@ https://www.y-shin.net/posts/fuwari-link-card/
 コメント機能はこれまでと同様に`giscus`を使用しました。
 
 1. 以下の手順でgiscusを使用するための準備をする  
-[giscusの設定](/posts/giscus-nextjs/#giscusの設定)
+   [giscusの設定](/posts/giscus-nextjs/#giscusの設定)
 
 2. `src/components/Comments.astro`を作成する
 
@@ -155,7 +155,7 @@ import Comments from '../../components/Comments.astro';
 
 FuwariデフォルトのコードブロックはLanguageやファイル名を表示できないため、`astro-expressive-code`を使用してカスタマイズしました。
 
-以下で記事にしています。  
+以下で記事にしています。
 
 https://www.y-shin.net/posts/fuwari-expressive-code/
 

@@ -1,12 +1,12 @@
 ---
 title: 個人WEBをTailwind CSSで書き直しました
 published: 2024-07-29
-description: 'お久しぶりです。個人サイトをTailwind CSSで書き直してみました。'
-image: './tailwindcss.webp'
+description: "お久しぶりです。個人サイトをTailwind CSSで書き直してみました。"
+image: "./tailwindcss.webp"
 tags: [Tailwind CSS, Tailwind UI, Spotlight]
-category: 'Web Site'
-draft: false 
-lang: 'ja'
+category: "Web Site"
+draft: false
+lang: "ja"
 prevSlug: "rewrite-nextjs"
 prevTitle: "個人WEBをNext.js + Chakra UIで書き直しました"
 nextSlug: "giscus-nextjs"

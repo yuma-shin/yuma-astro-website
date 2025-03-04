@@ -1,12 +1,12 @@
 ---
 title: FuwariでExpressive Codeを使用しコードブロックをカスタマイズする
 published: 2025-03-02
-description: 'FuwariでExpressive Codeを使用しコードブロックをカスタマイズしてみました。'
-image: './cover.webp'
+description: "FuwariでExpressive Codeを使用しコードブロックをカスタマイズしてみました。"
+image: "./cover.webp"
 tags: [expressive-code, Astro, Fuwari]
-category: 'Web Site'
-draft: false 
-lang: 'ja'
+category: "Web Site"
+draft: false
+lang: "ja"
 prevSlug: "fuwari-link-card"
 prevTitle: "Fuwariでremark-link-cardを使用してリンクカードを実装する"
 ---
@@ -33,59 +33,56 @@ pnpm add astro-expressive-code @expressive-code/plugin-line-numbers
 
 ```javascript title="astro.config.mjs" ins={1-2, 40-43}
 import expressiveCode from "astro-expressive-code";
-import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
-import remnarkLinkCard from 'remark-link-card'
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
+import remnarkLinkCard from "remark-link-card";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.y-shin.net/",
   base: "/",
   trailingSlash: "always",
-  integrations: [tailwind(
-      {
-        nesting: true,
-      }
-  ), swup({
-    theme: false,
-    animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
-    // the default value `transition-` cause transition delay
-    // when the Tailwind class `transition-all` is used
-    containers: ["main", "#toc"],
-    smoothScrolling: true,
-    cache: true,
-    preload: true,
-    accessibility: true,
-    updateHead: true,
-    updateBodyClass: false,
-    globalInstance: true,
-  }), icon({
-    include: {
-      "preprocess: vitePreprocess(),": ["*"],
-      "fa6-brands": ["*"],
-      "fa6-regular": ["*"],
-      "fa6-solid": ["*"],
-    },
-  }), svelte(), sitemap(), Compress({
-    CSS: false,
-    Image: false,
-    Action: {
-      Passed: async () => true, // https://github.com/PlayForm/Compress/issues/376
-    },
-  }), expressiveCode({
-    themes:['aurora-x'],
-    plugins: [pluginLineNumbers()]
-  })],
+  integrations: [
+    tailwind({
+      nesting: true,
+    }),
+    swup({
+      theme: false,
+      animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
+      // the default value `transition-` cause transition delay
+      // when the Tailwind class `transition-all` is used
+      containers: ["main", "#toc"],
+      smoothScrolling: true,
+      cache: true,
+      preload: true,
+      accessibility: true,
+      updateHead: true,
+      updateBodyClass: false,
+      globalInstance: true,
+    }),
+    icon({
+      include: {
+        "preprocess: vitePreprocess(),": ["*"],
+        "fa6-brands": ["*"],
+        "fa6-regular": ["*"],
+        "fa6-solid": ["*"],
+      },
+    }),
+    svelte(),
+    sitemap(),
+    Compress({
+      CSS: false,
+      Image: false,
+      Action: {
+        Passed: async () => true, // https://github.com/PlayForm/Compress/issues/376
+      },
+    }),
+    expressiveCode({
+      themes: ["aurora-x"],
+      plugins: [pluginLineNumbers()],
+    }),
+  ],
   markdown: {
-    remarkPlugins: [
-      [remnarkLinkCard,{ shortenUrl: true, cache: true }],
-      remarkMath,
-      remarkReadingTime,
-      remarkExcerpt,
-      remarkGithubAdmonitionsToDirectives,
-      remarkDirective,
-      remarkSectionize,
-      parseDirectiveNode,
-    ],
+    remarkPlugins: [[remnarkLinkCard, { shortenUrl: true, cache: true }], remarkMath, remarkReadingTime, remarkExcerpt, remarkGithubAdmonitionsToDirectives, remarkDirective, remarkSectionize, parseDirectiveNode],
     rehypePlugins: [
       rehypeKatex,
       rehypeSlug,
@@ -133,10 +130,7 @@ export default defineConfig({
       rollupOptions: {
         onwarn(warning, warn) {
           // temporarily suppress this warning
-          if (
-            warning.message.includes("is dynamically imported by") &&
-            warning.message.includes("but also statically imported by")
-          ) {
+          if (warning.message.includes("is dynamically imported by") && warning.message.includes("but also statically imported by")) {
             return;
           }
           warn(warning);
@@ -222,16 +216,16 @@ const className = Astro.props.class
     }
 </script>
 
-<!-- 
+<!--
 <script>
   const observer = new MutationObserver(addPreCopyButton);
   observer.observe(document.body, { childList: true, subtree: true });
-  
+
   document.addEventListener("DOMContentLoaded", addPreCopyButton);
 
   function addPreCopyButton() {
     observer.disconnect();
-    
+
     let codeBlocks = Array.from(document.querySelectorAll("pre"));
 
     for (let codeBlock of codeBlocks) {
@@ -270,7 +264,7 @@ const className = Astro.props.class
         }, 1000);
       });
     }
-    
+
     observer.observe(document.body, { childList: true, subtree: true });
   }
 </script>
