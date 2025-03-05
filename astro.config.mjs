@@ -32,7 +32,7 @@ import remnarkLinkCard from "remark-link-card";
 export default defineConfig({
   site: "https://www.y-shin.net/",
   base: "/",
-  trailingSlash: "always",
+  trailingSlash: "ignore",
   integrations: [
     tailwind({
       nesting: true,

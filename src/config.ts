@@ -6,7 +6,7 @@ export const siteConfig: SiteConfig = {
   subtitle: "Engineer of Voice Communication, Network, Cloud and Generative AI",
   lang: "ja", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
   themeColor: {
-    hue: 270, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+    hue: 200, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
     fixed: false, // Hide the theme color picker for visitors
   },
   banner: {
@@ -15,7 +15,7 @@ export const siteConfig: SiteConfig = {
     position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
     credit: {
       enable: false, // Display the credit text of the banner image
-      text: "aaa", // Credit text to be displayed
+      text: "", // Credit text to be displayed
       url: "", // (Optional) URL link to the original artwork or artist's page
     },
   },
