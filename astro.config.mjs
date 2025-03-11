@@ -33,6 +33,7 @@ export default defineConfig({
   site: "https://www.y-shin.net/",
   base: "/",
   trailingSlash: "ignore",
+
   integrations: [
     tailwind({
       nesting: true,
@@ -81,6 +82,7 @@ export default defineConfig({
       },
     }),
   ],
+
   markdown: {
     remarkPlugins: [[remnarkLinkCard, { shortenUrl: true }], remarkMath, remarkReadingTime, remarkExcerpt, remarkGithubAdmonitionsToDirectives, remarkDirective, remarkSectionize, parseDirectiveNode],
     rehypePlugins: [
@@ -125,6 +127,7 @@ export default defineConfig({
       ],
     ],
   },
+
   vite: {
     build: {
       rollupOptions: {
@@ -140,3 +143,4 @@ export default defineConfig({
     plugns: [rawFonts([".woff2", ".ttf", ".woff", ".otf"])],
   },
 });
+
