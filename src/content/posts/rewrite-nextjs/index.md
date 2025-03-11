@@ -7,8 +7,6 @@ tags: [ChakraUI, Next.js]
 category: "Web Site"
 draft: false
 lang: "ja"
-nextSlug: "rewrite-spotlight"
-nextTitle: "個人WEBをTailwind CSSで書き直しました"
 ---
 
 # はじめに

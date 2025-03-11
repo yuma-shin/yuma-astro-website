@@ -7,10 +7,6 @@ tags: [giscus, Next.js]
 category: "Web Site"
 draft: false
 lang: "ja"
-prevSlug: "rewrite-spotlight"
-prevTitle: "個人WEBをTailwind CSSで書き直しました"
-nextSlug: "oh-my-posh"
-nextTitle: "Oh My PoshでWindows Terminalをカスタマイズする(備忘録)"
 ---
 
 お久しぶりです。私のブログにはコメントやリアクションを付けられる機能が無いので「giscus」を使ってコメント機能を実装してみました。

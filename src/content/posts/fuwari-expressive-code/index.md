@@ -7,8 +7,6 @@ tags: [expressive-code, Astro, Fuwari]
 category: "Web Site"
 draft: false
 lang: "ja"
-prevSlug: "fuwari-link-card"
-prevTitle: "Fuwariでremark-link-cardを使用してリンクカードを実装する"
 ---
 
 FuwariのデフォルトコードブロックはLanguageやファイル名を表示できないため、`astro-expressive-code`を利用してカスタマイズしてみました。

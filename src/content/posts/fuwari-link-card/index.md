@@ -7,10 +7,6 @@ tags: [remark-link-card, Astro, Fuwari]
 category: "Web Site"
 draft: false
 lang: "ja"
-nextSlug: "fuwari-expressive-code"
-nextTitle: "FuwariでExpressive Codeを使用しコードブロックをカスタマイズする"
-prevSlug: "rewrite-astro"
-prevTitle: "個人WEBをAstro + Fuwariで書き直しました"
 ---
 
 FuwariではリンクカードはGithubのみの対応のため、その他のサイトもリンクカードとして表示させるカスタマイズを入れました。  
