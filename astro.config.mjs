@@ -82,7 +82,7 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    remarkPlugins: [[remnarkLinkCard, { shortenUrl: true, cache: true }], remarkMath, remarkReadingTime, remarkExcerpt, remarkGithubAdmonitionsToDirectives, remarkDirective, remarkSectionize, parseDirectiveNode],
+    remarkPlugins: [[remnarkLinkCard, { shortenUrl: true }], remarkMath, remarkReadingTime, remarkExcerpt, remarkGithubAdmonitionsToDirectives, remarkDirective, remarkSectionize, parseDirectiveNode],
     rehypePlugins: [
       rehypeKatex,
       rehypeSlug,
