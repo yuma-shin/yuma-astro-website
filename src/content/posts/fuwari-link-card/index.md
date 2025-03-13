@@ -2,7 +2,7 @@
 title: Fuwariでremark-link-cardを使用してリンクカードを実装する
 published: 2025-03-02
 description: "Fuwariでremark-link-cardを使用してリンクカードを実装してみました"
-image: ""
+image: "./cover.webp"
 tags: [remark-link-card, Astro, Fuwari]
 category: "Web Site"
 draft: false
