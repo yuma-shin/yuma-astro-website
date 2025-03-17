@@ -19,45 +19,41 @@ let links: NavBarLink[] = navBarConfig.links.map(
 )
 ---
 
-<div id="navbar" class="nav-container fixed left-1/2 z-10 w-full select-none flex flex-col justify-end rounded-b-xl px-4 mx-auto transition-all max-w-[var(--page-width)] bg-[var(--card-bg)] backdrop-blur-xl">
-  <div class="relative flex h-[4rem] w-full items-center justify-between overflow-visible lg:h-[4.5rem]">
-    <div class="brand flex w-full flex-row items-center justify-between lg:hidden">
-      <button
-        id="menu-switcher"
-        type="button"
-        class="h-[40px] w-[44px] content-center mr-2 flex flex-row items-center rounded-lg text-black/75 dark:text-white/75 transition-all hover:bg-[var(--btn-plain-bg-hover)] hover:text-[var(--primary)]"
-      >
-        <Icon
-          id="menu-icon-closed"
-          size={20}
-          name="line-md:close-to-menu-transition"
-          class="mx-auto hidden"
-        />
-        <Icon
-          id="menu-icon-opened"
-          size={20}
-          name="line-md:menu-to-close-transition"
-          class="mx-auto hidden"
-        />
-      </button>
-      <a class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 truncate rounded-lg px-4 py-2 text-md font-bold text-[var(--primary)] transition-all hover:bg-[var(--btn-plain-bg-hover)]" href={url('/')}>
-        {siteConfig.title}
-      </a>
-    </div>
-    
-    <a href={url('/')} class="hidden h-[3.25rem] rounded-lg px-5 font-bold transition-all hover:bg-[var(--btn-plain-bg-hover)] active:scale-95 lg:block">
-      <div class="flex h-full flex-row content-center items-center text-md text-[var(--primary)]">
-        {siteConfig.title}
+<div id="navbar" class="z-50 w-full flex flex-col justify-between rounded-b-xl transition-all px-4 max-w-[var(--page-width)] bg-[var(--card-bg)] backdrop-blur-xl">
+  <div class="absolute h-8 left-0 right-0 -top-8 bg-[var(--card-bg)] transition"></div> <!-- used for onload animation -->
+  <div class:list={[
+      className,
+      "card-base !overflow-visible h-[4.5rem] !rounded-t-none flex items-center justify-between"]}>
+    <button
+      id="menu-switcher"
+      type="button"
+      class="btn-plain scale-animation rounded-lg w-11 h-11 active:scale-90 md:!hidden"
+    >
+      <Icon
+        id="menu-icon-closed"
+        size={20}
+        name="line-md:close-to-menu-transition"
+        class="mx-auto hidden"
+      />
+      <Icon
+        id="menu-icon-opened"
+        size={20}
+        name="line-md:menu-to-close-transition"
+        class="mx-auto hidden"
+      />
+    </button>
+    <a href={url('/')} class="btn-plain scale-animation rounded-lg h-[3.25rem] px-5 font-bold active:scale-95">
+      <div class="flex flex-row text-[var(--primary)] items-center text-md">
+          {siteConfig.title}
       </div>
     </a>
-    
-    <div class="absolute left-1/2 hidden -translate-x-1/2 items-center justify-between space-x-1 text-md text-black/75 dark:text-white/75 lg:flex">
+    <div class="hidden md:flex">
       {
         links.map((link) => (
           <a 
             href={link.external ? link.url : url(link.url)} 
             target={link.external ? "_blank" : null}
-            class="flex h-[3.25rem] items-center rounded-lg px-5 transition-all hover:bg-[var(--btn-plain-bg-hover)] active:scale-95"
+            class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"
             >
             <div class="flex items-center">
               <span class="font-medium">{link.name}</span>
@@ -115,12 +111,6 @@ let links: NavBarLink[] = navBarConfig.links.map(
 </div>
 
 <style define:vars={{ navCount: links.length }}>
-  .nav-container {
-  transform: translateX(-50%) translateY(-5rem);
-  animation: 300ms nav-onload-animation;
-  animation-fill-mode: forwards;
-}
-
   .mobile-menu-nav-closed {
     @apply opacity-0;
     height: auto;
