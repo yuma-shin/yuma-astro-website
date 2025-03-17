@@ -3,7 +3,6 @@ import { Icon } from 'astro-icon/components'
 import DisplaySettings from './widget/DisplaySettings.svelte'
 import { LinkPreset, type NavBarLink } from '../types/config'
 import { navBarConfig, siteConfig } from '../config'
-import NavMenuPanel from './widget/NavMenuPanel.astro'
 import Search from './Search.svelte'
 import { LinkPresets } from '../constants/link-presets'
 import LightDarkSwitch from './LightDarkSwitch.svelte'
@@ -19,92 +18,286 @@ let links: NavBarLink[] = navBarConfig.links.map(
   },
 )
 ---
-<div id="navbar" class="z-50 onload-animation">
-    <div class="absolute h-8 left-0 right-0 -top-8 bg-[var(--card-bg)] transition"></div> <!-- used for onload animation -->
-    <div class:list={[
-        className,
-        "card-base !overflow-visible max-w-[var(--page-width)] h-[4.5rem] !rounded-t-none mx-auto flex items-center justify-between px-4"]}>
-        <a href={url('/')} class="btn-plain scale-animation rounded-lg h-[3.25rem] px-5 font-bold active:scale-95">
-            <div class="flex flex-row text-[var(--primary)] items-center text-md">
-                <!-- <Icon name="material-symbols:home-outline-rounded" class="text-[1.75rem] mb-1 mr-2" />-->
-                {siteConfig.title}
-            </div>
-        </a>
-        <div class="hidden md:flex">
-            {links.map((l) => {
-                console.log(l)
-                return <a aria-label={l.name} href={l.external ? l.url : url(l.url)} target={l.external ? "_blank" : null}
-                          class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"
-                >
-                    <div class="flex items-center">
-                        {l.name}
-                        {l.external && <Icon name="fa6-solid:arrow-up-right-from-square" class="text-[0.875rem] transition -translate-y-[1px] ml-1 text-black/[0.2] dark:text-white/[0.2]"></Icon>}
-                    </div>
-                </a>;
-            })}
-        </div>
-        <div class="flex">
-            <!--<SearchPanel client:load>-->
-            <Search client:only="svelte"></Search>
-            {!siteConfig.themeColor.fixed && (
-                    <button aria-label="Display Settings" class="btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90" id="display-settings-switch">
-                        <Icon name="material-symbols:palette-outline" class="text-[1.25rem]"></Icon>
-                    </button>
-            )}
-            <LightDarkSwitch client:only="svelte"></LightDarkSwitch>
-            <button aria-label="Menu" name="Nav Menu" class="btn-plain scale-animation rounded-lg w-11 h-11 active:scale-90 md:!hidden" id="nav-menu-switch">
-                <Icon name="material-symbols:menu-rounded" class="text-[1.25rem]"></Icon>
-            </button>
-        </div>
-        <NavMenuPanel links={links}></NavMenuPanel>
-        <DisplaySettings client:only="svelte"></DisplaySettings>
+
+<div id="navbar" class="nav-container fixed left-1/2 z-10 w-full select-none flex flex-col justify-end rounded-b-xl px-4 mx-auto transition-all max-w-[var(--page-width)] bg-[var(--card-bg)] backdrop-blur-xl">
+  <div class="relative flex h-[4rem] w-full items-center justify-between overflow-visible lg:h-[4.5rem]">
+    <div class="brand flex w-full flex-row items-center justify-between lg:hidden">
+      <button
+        id="menu-switcher"
+        type="button"
+        class="h-[40px] w-[44px] content-center mr-2 flex flex-row items-center rounded-lg text-black/75 dark:text-white/75 transition-all hover:bg-[var(--btn-plain-bg-hover)] hover:text-[var(--primary)]"
+      >
+        <Icon
+          id="menu-icon-closed"
+          size={20}
+          name="line-md:close-to-menu-transition"
+          class="mx-auto hidden"
+        />
+        <Icon
+          id="menu-icon-opened"
+          size={20}
+          name="line-md:menu-to-close-transition"
+          class="mx-auto hidden"
+        />
+      </button>
+      <a class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 truncate rounded-lg px-4 py-2 text-md font-bold text-[var(--primary)] transition-all hover:bg-[var(--btn-plain-bg-hover)]" href={url('/')}>
+        {siteConfig.title}
+      </a>
     </div>
+    
+    <a href={url('/')} class="hidden h-[3.25rem] rounded-lg px-5 font-bold transition-all hover:bg-[var(--btn-plain-bg-hover)] active:scale-95 lg:block">
+      <div class="flex h-full flex-row content-center items-center text-md text-[var(--primary)]">
+        {siteConfig.title}
+      </div>
+    </a>
+    
+    <div class="absolute left-1/2 hidden -translate-x-1/2 items-center justify-between space-x-1 text-md text-black/75 dark:text-white/75 lg:flex">
+      {
+        links.map((link) => (
+          <a 
+            href={link.external ? link.url : url(link.url)} 
+            target={link.external ? "_blank" : null}
+            class="flex h-[3.25rem] items-center rounded-lg px-5 transition-all hover:bg-[var(--btn-plain-bg-hover)] active:scale-95"
+            >
+            <div class="flex items-center">
+              <span class="font-medium">{link.name}</span>
+              {link.external && <Icon name="material-symbols:open-in-new" class="text-[0.875rem] transition -translate-y-[1px] ml-1 text-black/[0.2] dark:text-white/[0.2]" />}
+            </div>
+          </a>
+        ))
+      }
+    </div>
+    
+    <div class="flex flex-row items-center justify-end space-x-1 lg:mr-2">
+      <Search client:only="svelte" />
+      
+      {!siteConfig.themeColor.fixed && (
+        <button 
+          id="display-settings-switch"
+          aria-label="Display Settings" 
+          class="flex w-11 h-11 justify-center items-center rounded-lg py-2 text-black/75 dark:text-white/75 transition-all hover:bg-[var(--btn-plain-bg-hover)] hover:text-[var(--primary)]"
+        >
+          <Icon size={20} name="material-symbols:palette-outline" />
+        </button>
+      )}
+      
+      <LightDarkSwitch client:only="svelte" />
+    </div>
+  </div>
+  
+  <div id="mobile-menu" class="px-2 transition-all duration-300">
+    <ul
+      id="mobile-menu-nav"
+      class="mobile-menu-nav mobile-menu-nav-closed flex flex-col space-y-1 sm:space-y-2 overflow-hidden text-md font-bold text-black/75 dark:text-white/75 transition-all duration-700"
+    >
+      {
+        links.map((link) => (
+          <li class="mt-0.5">
+            <a href={link.external ? link.url : url(link.url)} target={link.external ? "_blank" : null} class="mobile-nav-item flex flex-row items-center justify-between py-2 md:py-2 md:mb-3 pl-3 pr-1 rounded-lg gap-4 sm:gap-6 md:gap-8
+            hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition duration-200">
+              <div class="flex flex-row items-center space-x-2">
+                <span class="text-[var(--primary)]">·</span>
+                <span>{link.name}</span>
+              </div>
+              {!link.external ? (
+                <Icon name="material-symbols:chevron-right-rounded" class="text-[var(--text-color-lighten)]" />
+              ) : (
+                <Icon name="material-symbols:open-in-new" class="text-[0.75rem] text-black/25 dark:text-white/25" />
+              )}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  
+  <DisplaySettings client:only="svelte" />
 </div>
 
+<style define:vars={{ navCount: links.length }}>
+  .nav-container {
+  transform: translateX(-50%) translateY(-5rem);
+  animation: 300ms nav-onload-animation;
+  animation-fill-mode: forwards;
+}
+
+  .mobile-menu-nav-closed {
+    @apply opacity-0;
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 400ms ease-out, opacity 300ms ease-out;
+  }
+
+  .mobile-menu-nav-opened {
+    @apply opacity-100;
+    height: auto;
+    max-height: calc(var(--navCount) * 45px);
+    overflow: hidden;
+    transition: max-height 400ms ease-in, opacity 300ms ease-in;
+  }
+
+  @keyframes nav-onload-animation {
+    0% {
+      transform: translateY(-5rem) translateX(-50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) translateX(-50%);
+      opacity: 1;
+    }
+  }
+</style>
+
 <script>
-function switchTheme() {
-    if (localStorage.theme === 'dark') {
-        document.documentElement.classList.remove('dark');
-        localStorage.theme = 'light';
+  /**
+   * Reinitializes an SVG icon by cloning it and replacing the original icon with the clone.
+   *
+   * @param icon - The SVG element to be reinitialized.
+   * @returns The cloned SVG element that replaced the original.
+   */
+  const reinitializeIcon = (icon: SVGElement) => {
+    const cloned = icon.cloneNode(true) as SVGElement;
+    icon.parentNode?.replaceChild(cloned, icon);
+    return cloned;
+  };
+
+  // get elements
+  const menuSwitcher = document.getElementById(
+    "menu-switcher"
+  ) as HTMLButtonElement;
+  const mobileMenuNav = document.getElementById(
+    "mobile-menu-nav"
+  ) as HTMLUListElement;
+  const mobileMenuNavItems = document.getElementsByClassName("mobile-nav-item");
+  let menuIconClosed = document.getElementById(
+    "menu-icon-closed"
+  ) as any as SVGElement;
+  let menuIconOpened = document.getElementById(
+    "menu-icon-opened"
+  ) as any as SVGElement;
+
+  // menu state
+  let isMenuOpen = false;
+
+  // メニューの高さを計算する関数
+  const calculateMenuHeight = () => {
+    const items = mobileMenuNav.querySelectorAll('li');
+    let totalHeight = 0;
+    
+    items.forEach(item => {
+      const itemHeight = item.offsetHeight;
+      const computedStyle = window.getComputedStyle(item);
+      const marginTop = parseInt(computedStyle.marginTop);
+      const marginBottom = parseInt(computedStyle.marginBottom);
+      
+      totalHeight += itemHeight + marginTop + marginBottom;
+    });
+    
+    // スペーシングを考慮した余分な高さを追加
+    const spacing = window.innerWidth < 640 ? 4 : window.innerWidth < 768 ? 8 : 12;
+    totalHeight += (items.length - 1) * spacing;
+    
+    // 少し余裕を持たせる
+    totalHeight += 10;
+    
+    return totalHeight;
+  };
+
+  // switch menu open / close
+  const switchMenuState = () => {
+    menuIconClosed.style.display = isMenuOpen ? "block" : "none";
+    menuIconOpened.style.display = !isMenuOpen ? "block" : "none";
+    if (isMenuOpen) menuIconClosed = reinitializeIcon(menuIconClosed);
+    else menuIconOpened = reinitializeIcon(menuIconOpened);
+    
+    if (isMenuOpen) {
+      // 閉じる前にまず現在の高さを設定して、CSSトランジションが動作するようにする
+      const currentHeight = mobileMenuNav.scrollHeight;
+      mobileMenuNav.style.maxHeight = `${currentHeight}px`;
+      
+      // 少し遅延させてから高さを0に変更することでアニメーションを発生させる
+      setTimeout(() => {
+        mobileMenuNav.style.maxHeight = "0";
+        mobileMenuNav.classList.replace(
+          "mobile-menu-nav-opened",
+          "mobile-menu-nav-closed"
+        );
+      }, 10);
     } else {
-        document.documentElement.classList.add('dark');
-        localStorage.theme = 'dark';
+      mobileMenuNav.classList.replace(
+        "mobile-menu-nav-closed",
+        "mobile-menu-nav-opened"
+      );
+      
+      // 項目の実際の高さに基づいて動的に高さを計算
+      setTimeout(() => {
+        const totalHeight = calculateMenuHeight();
+        mobileMenuNav.style.maxHeight = `${totalHeight}px`;
+      }, 10); // 少し遅延させてDOMが更新された後に実行
     }
-}
+    
+    isMenuOpen = !isMenuOpen;
+  };
 
-function loadButtonScript() {
-    let switchBtn = document.getElementById("scheme-switch");
-    if (switchBtn) {
-        switchBtn.onclick = function () {
-            switchTheme()
-        };
+  // click menu item then close menu
+  menuSwitcher.addEventListener("click", switchMenuState);
+  for (let i = 0; i < mobileMenuNavItems.length; ++i) {
+    mobileMenuNavItems.item(i)?.addEventListener("click", switchMenuState);
+  }
+  // click other elements then close menu
+  document.addEventListener("click", (event) => {
+    if (
+      !menuSwitcher.contains(event.target as any) &&
+      !mobileMenuNav.contains(event.target as any) &&
+      isMenuOpen
+    ) {
+      switchMenuState();
     }
+  });
 
-    let settingBtn = document.getElementById("display-settings-switch");
-    if (settingBtn) {
-        settingBtn.onclick = function () {
-            let settingPanel = document.getElementById("display-setting");
-            if (settingPanel) {
-                settingPanel.classList.toggle("float-panel-closed");
-            }
-        };
+  // ウィンドウサイズ変更時にもメニューの高さを再計算
+  window.addEventListener('resize', () => {
+    if (isMenuOpen) {
+      const totalHeight = calculateMenuHeight();
+      mobileMenuNav.style.maxHeight = `${totalHeight}px`;
     }
+  });
 
-    let menuBtn = document.getElementById("nav-menu-switch");
-    if (menuBtn) {
-        menuBtn.onclick =  function () {
-            let menuPanel = document.getElementById("nav-menu-panel");
-            if (menuPanel) {
-                menuPanel.classList.toggle("float-panel-closed");
-            }
-        };
-    }
-}
+  // 表示設定関連の処理
+  let settingBtn = document.getElementById("display-settings-switch");
+  if (settingBtn) {
+    settingBtn.onclick = function () {
+      let settingPanel = document.getElementById("display-setting");
+      if (settingPanel) {
+        settingPanel.classList.toggle("float-panel-closed");
+      }
+    };
+  }
 
-loadButtonScript();
+  // Initialize
+  document.addEventListener("DOMContentLoaded", () => {
+    menuIconClosed.style.display = "block";
+  });
+
+  // fold nav bar when scroll down
+  const navBarElement = document.getElementById("navbar");
+  const bannerElement = document.getElementById("banner");
+  if (bannerElement) {
+    const bannerHeight = bannerElement.offsetHeight - 50;
+    let lastYPos = 0;
+    window.addEventListener("scroll", () => {
+      if (bannerHeight < window.scrollY && window.scrollY > lastYPos) {
+        navBarElement!.style.top = "-72px";
+      } else {
+        navBarElement!.style.top = "0";
+      }
+      lastYPos = window.scrollY;
+    });
+  }
 </script>
 
-{import.meta.env.PROD && <script is:inline define:vars={{scriptUrl: url('/pagefind/pagefind.js')}}>
+{import.meta.env.PROD && <script is:inline define:vars={{ scriptUrl: url('/pagefind/pagefind.js') }}>
 async function loadPagefind() {
     const pagefind = await import(scriptUrl)
     await pagefind.options({
