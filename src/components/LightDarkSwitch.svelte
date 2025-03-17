@@ -62,13 +62,13 @@ function hidePanel() {
 <div class="relative z-50" role="menu" tabindex="-1" onmouseleave={hidePanel}>
     <button aria-label="Light/Dark Mode" role="menuitem" class="relative btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90" id="scheme-switch" onclick={toggleScheme} onmouseenter={showPanel}>
     <div class="absolute" class:opacity-0={mode !== LIGHT_MODE}>
-        <Icon size={20} icon="line-md:moon-alt-to-sunny-outline-loop-transition" class="text-[1.5rem]"></Icon>
+        <Icon height={24} icon="line-md:moon-alt-to-sunny-outline-loop-transition" class="text-[1.5rem]"></Icon>
     </div>
     <div class="absolute" class:opacity-0={mode !== DARK_MODE}>
-        <Icon size={20} icon="line-md:sunny-outline-to-moon-alt-loop-transition" class="text-[1.5rem]"></Icon>
+        <Icon height={24} icon="line-md:sunny-outline-to-moon-alt-loop-transition" class="text-[1.5rem]"></Icon>
     </div>
     <div class="absolute" class:opacity-0={mode !== AUTO_MODE}>
-        <Icon size={20} icon="line-md:paint-drop-half-filled" class="text-[1.25rem]"></Icon>
+        <Icon height={24} icon="line-md:paint-drop-half-filled" class="text-[1.25rem]"></Icon>
     </div>
 </button>
 

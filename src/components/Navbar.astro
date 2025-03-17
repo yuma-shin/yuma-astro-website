@@ -19,11 +19,11 @@ let links: NavBarLink[] = navBarConfig.links.map(
 )
 ---
 
-<div id="navbar" class="z-50 w-full flex flex-col justify-between rounded-b-xl transition-all px-4 max-w-[var(--page-width)] bg-[var(--card-bg)] backdrop-blur-xl">
-  <div class="absolute h-8 left-0 right-0 -top-8 bg-[var(--card-bg)] transition"></div> <!-- used for onload animation -->
+<div id="navbar" class="nav z-50 w-full flex flex-col justify-between rounded-b-xl transition-all px-4 max-w-[var(--page-width)] bg-white/80 dark:bg-[oklch(0.23_0.015_var(--hue)/0.8)] backdrop-blur-xl">
+  <div class="absolute h-8 left-0 right-0 -top-8 transition"></div> <!-- used for onload animation -->
   <div class:list={[
       className,
-      "card-base !overflow-visible h-[4.5rem] !rounded-t-none flex items-center justify-between"]}>
+      "!overflow-visible h-[4.5rem] !rounded-t-none flex items-center justify-between"]}>
     <button
       id="menu-switcher"
       type="button"
@@ -31,13 +31,13 @@ let links: NavBarLink[] = navBarConfig.links.map(
     >
       <Icon
         id="menu-icon-closed"
-        size={20}
+        size={24}
         name="line-md:close-to-menu-transition"
         class="mx-auto hidden"
       />
       <Icon
         id="menu-icon-opened"
-        size={20}
+        size={24}
         name="line-md:menu-to-close-transition"
         class="mx-auto hidden"
       />
@@ -73,7 +73,7 @@ let links: NavBarLink[] = navBarConfig.links.map(
           aria-label="Display Settings" 
           class="flex w-11 h-11 justify-center items-center rounded-lg py-2 text-black/75 dark:text-white/75 transition-all hover:bg-[var(--btn-plain-bg-hover)] hover:text-[var(--primary)]"
         >
-          <Icon size={20} name="material-symbols:palette-outline" />
+          <Icon size={24} name="material-symbols:palette-outline" />
         </button>
       )}
       
@@ -88,17 +88,17 @@ let links: NavBarLink[] = navBarConfig.links.map(
     >
       {
         links.map((link) => (
-          <li class="mt-0.5">
+          <li>
             <a href={link.external ? link.url : url(link.url)} target={link.external ? "_blank" : null} class="mobile-nav-item flex flex-row items-center justify-between py-2 md:py-2 md:mb-3 pl-3 pr-1 rounded-lg gap-4 sm:gap-6 md:gap-8
             hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition duration-200">
               <div class="flex flex-row items-center space-x-2">
-                <span class="text-[var(--primary)]">·</span>
+                <span class="text-[var(--primary)] text-4xl">·</span>
                 <span>{link.name}</span>
               </div>
               {!link.external ? (
-                <Icon name="material-symbols:chevron-right-rounded" class="text-[var(--text-color-lighten)]" />
+                <Icon size={24} name="material-symbols:chevron-right-rounded" class="text-[var(--text-color-lighten)]" />
               ) : (
-                <Icon name="material-symbols:open-in-new" class="text-[0.75rem] text-black/25 dark:text-white/25" />
+                <Icon size={24} name="material-symbols:open-in-new" class="text-[0.75rem] text-black/25 dark:text-white/25" />
               )}
             </a>
           </li>
@@ -111,6 +111,10 @@ let links: NavBarLink[] = navBarConfig.links.map(
 </div>
 
 <style define:vars={{ navCount: links.length }}>
+  .nav {
+
+
+  }
   .mobile-menu-nav-closed {
     @apply opacity-0;
     height: auto;
@@ -125,6 +129,7 @@ let links: NavBarLink[] = navBarConfig.links.map(
     max-height: calc(var(--navCount) * 45px);
     overflow: hidden;
     transition: max-height 400ms ease-in, opacity 300ms ease-in;
+    margin-bottom: 1rem;
   }
 
   @keyframes nav-onload-animation {

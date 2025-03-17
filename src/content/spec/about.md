@@ -67,3 +67,7 @@ PC関連のガジェット集め、ゲームをやっています。リモート
 - VMware vSphere
 - Zabbix
 - Electron
+
+# Special thanks to:
+- [Astro Fuwari Template](https://github.com/saicaca/fuwari) is used as the main design template.
+- [Astro Yukina Template](https://github.com/WhitePaper233/yukina) is used for some design components.
