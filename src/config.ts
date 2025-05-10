@@ -1,4 +1,4 @@
-import type { LicenseConfig, NavBarConfig, ProfileConfig, SiteConfig, ExpressiveCodeConfig } from "./types/config";
+import type { CommentConfig, LicenseConfig, NavBarConfig, ProfileConfig, SiteConfig, ExpressiveCodeConfig } from "./types/config";
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
@@ -92,4 +92,21 @@ export const licenseConfig: LicenseConfig = {
 
 export const expressiveCodeConfig: ExpressiveCodeConfig = {
   themes: ['one-light', 'aurora-x'],
+}
+
+export const commentConfig: CommentConfig = {
+  giscus: {
+    repo: 'yuma-shin/yuma-astro-website',
+    repoId: 'R_kgDON_3GsA',
+    category: 'Announcements',
+    categoryId: 'DIC_kwDON_3GsM4CnZC7',
+    mapping: 'pathname',
+    strict: '0',
+    reactionsEnabled: '1',
+    emitMetadata: '0',
+    inputPosition: 'top',
+    theme: 'reactive',
+    lang: 'ja',
+    loading: 'lazy',
+  },
 }
