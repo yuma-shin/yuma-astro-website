@@ -31,7 +31,6 @@ await (async () => {
       const module = await moduleLoader();
       const result = await getImage({ src: module.default });
       img.setAttribute("src", result.src);
-      console.log(result.src);
     } catch (error) {
       console.warn(`Skipping image "${normalizedPath}" due to processing error:`, error);
     }
