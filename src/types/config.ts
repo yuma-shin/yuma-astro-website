@@ -1,4 +1,4 @@
-import type Giscus from '@giscus/svelte'
+import type Giscus from 'giscus'
 import type { AUTO_MODE, DARK_MODE, LIGHT_MODE } from "@constants/constants";
 
 export type SiteConfig = {
@@ -85,6 +85,7 @@ export type BlogPostData = {
   description: string;
   tags: string[];
   draft?: boolean;
+  pinned?: boolean;
   image?: string;
   category?: string;
   prevTitle?: string;

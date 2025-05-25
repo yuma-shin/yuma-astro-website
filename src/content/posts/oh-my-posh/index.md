@@ -40,7 +40,7 @@ C:\
    ::github{repo="ryanoasis/nerd-fonts"}
 
 2. ダウンロードしたZIPファイルを展開し、`HackNerdFontMono-Regular.ttf`をダブルクリックし`インストール`をクリックする
-   ![](./font.png)
+   ![Font Install Window Test](./font.png "Font Install Window")
 
 # 3. Windows Terminalの設定を変更する
 

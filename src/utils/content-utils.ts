@@ -12,6 +12,11 @@ import { i18n } from "@i18n/translation";
   const sorted = allBlogPosts.sort(
     //(a: { data: BlogPostData }, b: { data: BlogPostData }) => {
     (a,b) => {
+    // First sort by pinned status (pinned posts come first)
+		if (a.data.pinned && !b.data.pinned) return -1;
+		if (!a.data.pinned && b.data.pinned) return 1;
+
+		// Then sort by date (newest first) for posts with the same pinned status
     const dateA = new Date(a.data.published);
     const dateB = new Date(b.data.published);
     return dateA > dateB ? -1 : 1;

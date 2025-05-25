@@ -19,6 +19,7 @@ import { LinkCardComponent } from "./src/plugins/rehype-component-linkcard.mjs";
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
+import remarkImageCaption from "./src/plugins/remark-image-caption.ts";
 import { rawFonts } from "./src/plugins/vite-raw-fonts.mjs";
 
 import expressiveCode from "astro-expressive-code";
@@ -84,7 +85,22 @@ export default defineConfig({
   ],
 
   markdown: {
-    remarkPlugins: [[remnarkLinkCard, { shortenUrl: true }], remarkMath, remarkReadingTime, remarkExcerpt, remarkGithubAdmonitionsToDirectives, remarkDirective, remarkSectionize, parseDirectiveNode],
+    remarkPlugins: [
+      [remnarkLinkCard, { shortenUrl: true }],
+      remarkMath,
+      remarkReadingTime,
+      remarkExcerpt,
+      remarkGithubAdmonitionsToDirectives,
+      remarkDirective,
+      [
+        remarkImageCaption,
+        {
+          className: "image-caption",
+        },
+      ],
+      remarkSectionize,
+      parseDirectiveNode,
+    ],
     rehypePlugins: [
       rehypeKatex,
       rehypeSlug,
