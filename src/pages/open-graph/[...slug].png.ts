@@ -45,7 +45,7 @@ html`<div tw="flex flex-col w-full h-full bg-[#1d1f21] text-[#c9cacc]">
       </div>
       <div tw="flex items-center justify-between w-full p-10 border-t border-[#2bbc89] text-xl">
         <div tw="flex">
-          <p tw="ml-3 font-semibold">Category : ${category}<br/ >Tags : ${tags}</p>
+          <p tw="ml-3 font-semibold">Category : ${category}<br />Tags : ${tags}</p>
         </div>
         <p>by Yuma Shintani</p>
       </div>
