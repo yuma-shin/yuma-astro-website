@@ -38,17 +38,17 @@ const ogOptions: SatoriOptions = {
 const markup = (title: string, published: Date, description?: string, category?: string, tags?: string[]) =>
   /* Satori uses tailwind! Create or view a desing using https://og-playground.vercel.app/ */
 html`<div tw="flex flex-col w-full h-full bg-[#1d1f21] text-[#c9cacc]">
-      <div tw="flex flex-col flex-1 w-full p-10 justify-center">
-        <p tw="text-2xl mb-6">${published.toDateString()}</p>
-        <h1 tw="text-6xl font-bold leading-snug text-white">${title}</h1>
-        <p tw="text-2xl">${description}</p>
-      </div>
-      <div tw="flex items-center justify-between w-full p-10 border-t border-[#2bbc89] text-xl">
-        <div tw="flex">
-          <p tw="ml-3 font-semibold">Category : ${category}<br />Tags : ${tags}</p>
+        <div tw="flex flex-col flex-1 w-full p-10 justify-center">
+          <p tw="text-2xl mb-6">${published.toDateString()}</p>
+          <h1 tw="text-6xl font-bold leading-snug text-white">${title}</h1>
+          <p tw="text-2xl">${description}</p>
         </div>
-        <p>by Yuma Shintani</p>
-      </div>
+        <div tw="flex items-center justify-between w-full p-10 border-t border-[#2bbc89] text-xl">
+          <div tw="flex">
+            <p tw="ml-3 font-semibold">Category : ${category}</p>
+          </div>
+          <p>by Yuma Shintani</p>
+        </div>
       </div>`;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
