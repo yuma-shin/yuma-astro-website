@@ -72,7 +72,7 @@ const softwares = [
     <div class="card-base z-10 px-9 py-6 relative w-full">
       <h1 class="text-3xl font-bold dark:text-white">Uses</h1>
       <p class="mt-4 text-gray-600 dark:text-gray-400">僕が使用しているガジェット・ソフトウェアをご紹介します。</p>
-      <h2 class="text-2xl font-semibold mt-8">Gadgets</h2>
+      <h2 class="text-2xl font-semibold mt-8 dark:text-white">Gadgets</h2>
       {
         gadgets.map((gadget) => (
           <div class="mt-8">
@@ -82,14 +82,14 @@ const softwares = [
                 <p class="text-gray-400 font-light">{gadget.imageAuthor ? gadget.imageAuthor : ""}</p>
               </div>
               <div class="flex-auto mx-2 md:mx-0">
-                <h1 class="text-xl">{gadget.name}</h1>
+                <h1 class="text-xl dark:text-white">{gadget.name}</h1>
                 <p class="mt-2 text-gray-600 dark:text-gray-400">{gadget.description}</p>
               </div>
             </div>
           </div>
         ))
       }
-      <h2 class="text-2xl font-semibold mt-8">Softwares</h2>
+      <h2 class="text-2xl font-semibold mt-8 dark:text-white">Softwares</h2>
       {
         softwares.map((software) => (
           <div class="mt-6">
@@ -98,7 +98,7 @@ const softwares = [
                 <img src={software.image ? software.image : noImage.src} class="rounded-[var(--radius-large)] w-full" />
               </div>
               <div class="flex-auto mx-2 md:mx-0">
-                <h1 class="text-xl">{software.name}</h1>
+                <h1 class="text-xl dark:text-white">{software.name}</h1>
                 <p class="mt-2 text-gray-600 dark:text-gray-400">{software.description}</p>
               </div>
             </div>
