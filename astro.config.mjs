@@ -27,7 +27,7 @@ import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import { pluginCollapsibleSections } from "@expressive-code/plugin-collapsible-sections";
 import { expressiveCodeConfig } from "./src/config.ts";
 import { pluginLanguageBadge } from "./src/plugins/language-badge.ts";
-import remnarkLinkCard from "remark-link-card";
+import remarkLinkCard from "remark-link-card";
 
 // https://astro.build/config
 export default defineConfig({
@@ -86,7 +86,7 @@ export default defineConfig({
 
   markdown: {
     remarkPlugins: [
-      [remnarkLinkCard, { shortenUrl: true }],
+      [remarkLinkCard, { cache: true, shortenUrl: true }],
       remarkMath,
       remarkReadingTime,
       remarkExcerpt,
