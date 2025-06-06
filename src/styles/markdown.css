@@ -248,9 +248,8 @@
     width: 100%;
     /*height: 150px;*/
     /*padding: 0.5rem;*/
-    padding-top: 0.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
     aspect-ratio: 1.7 / 1;
   }
 
@@ -258,10 +257,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /*
     border-top-left-radius: 0.75rem !important;
     border-bottom-left-radius: 0.75rem !important;
     border-bottom-right-radius: 0.75rem !important;
     border-top-right-radius: 0.75rem !important;
+    */
+    border-radius: 0.75rem !important;
   }
 
   /* スマホではタイトル・説明・URLを折り返す */
