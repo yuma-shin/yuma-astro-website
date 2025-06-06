@@ -248,7 +248,10 @@
     width: 100%;
     /*height: 150px;*/
     /*padding: 0.5rem;*/
-    aspect-ratio: 1.7 / 1;
+    /*aspect-ratio: 1.7 / 1;*/
+    height: 200px; /* ← 固定の高さに切り替える */
+    padding: 0.5rem;
+    box-sizing: border-box;
   }
 
   .rlc-image {
@@ -261,7 +264,6 @@
     border-bottom-right-radius: 0.75rem !important;
     border-top-right-radius: 0.75rem !important;
     */
-    margin:0.5rem;
     border-radius: 0.75rem !important;
   }
 
