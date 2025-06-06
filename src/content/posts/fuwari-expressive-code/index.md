@@ -29,7 +29,7 @@ pnpm add astro-expressive-code @expressive-code/plugin-line-numbers
 
 2. `astro.config.mjs`で定義する
 
-```javascript title="astro.config.mjs" ins={1-2, 40-43}
+```javascript title="astro.config.mjs" ins={1-2, 45-48}　collapse={5-35, 51-107}
 import expressiveCode from "astro-expressive-code";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import remnarkLinkCard from "remark-link-card";
@@ -141,9 +141,9 @@ export default defineConfig({
 
 # 既存スクリプトの編集
 
-1. `src/layouts/Layout.astro`で`preElements`をコメントアウトする
+1. `src/layouts/Layout.astro`で`preElements`を削除する
 
-```javascript title="Laayout.astro" ins={20-32}
+```javascript title="Laayout.astro" del={20-30}
 function initCustomScrollbar() {
 	const bodyElement = document.querySelector('body');
 	if (!bodyElement) return;
@@ -163,7 +163,6 @@ function initCustomScrollbar() {
 			autoHideSuspend: false,
 		},
 	});
-	/*
 	const preElements = document.querySelectorAll('pre');
 	preElements.forEach((ele) => {
 		OverlayScrollbars(ele, {
@@ -175,7 +174,6 @@ function initCustomScrollbar() {
 			}
 		});
 	});
-	*/
 	const katexElements = document.querySelectorAll('.katex-display') as NodeListOf<HTMLElement>;
 	katexElements.forEach((ele) => {
 		OverlayScrollbars(ele, {
@@ -187,9 +185,9 @@ function initCustomScrollbar() {
 }
 ```
 
-2. `src/component/misc/Markdown.astro`を編集し、コピーボタンのスクリプトをコメントアウトする。
+2. `src/component/misc/Markdown.astro`を編集し、コピーボタンのスクリプトを削除する。
 
-```javascript title="Markdown.astro" ins={25-77}
+```javascript title="Markdown.astro" del={25-75}
 ---
 import '@fontsource-variable/jetbrains-mono'
 import '@fontsource-variable/jetbrains-mono/wght-italic.css'
@@ -214,7 +212,6 @@ const className = Astro.props.class
     }
 </script>
 
-<!--
 <script>
   const observer = new MutationObserver(addPreCopyButton);
   observer.observe(document.body, { childList: true, subtree: true });
@@ -266,6 +263,5 @@ const className = Astro.props.class
     observer.observe(document.body, { childList: true, subtree: true });
   }
 </script>
--->
 
 ```
