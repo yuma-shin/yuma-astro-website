@@ -91,8 +91,10 @@ export const licenseConfig: LicenseConfig = {
 };
 
 export const expressiveCodeConfig: ExpressiveCodeConfig = {
-  themes: ['one-light', 'aurora-x'],
-}
+	// Note: Some styles (such as background color) are being overridden, see the astro.config.mjs file.
+	// Please select a dark theme, as this blog theme currently only supports dark background color
+	theme: "github-dark"
+};
 
 export const commentConfig: CommentConfig = {
   giscus: {

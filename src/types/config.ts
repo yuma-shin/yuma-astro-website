@@ -95,8 +95,8 @@ export type BlogPostData = {
 };
 
 export type ExpressiveCodeConfig = {
-  themes: string[]
-}
+	theme: string;
+};
 
 export type CommentConfig = {
   twikoo?: TwikooConfig
