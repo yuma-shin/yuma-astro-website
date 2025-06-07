@@ -9,6 +9,12 @@ draft: false
 lang: "ja"
 ---
 
+:::warning
+2025-06-07  
+[#476](https://github.com/saicaca/fuwari/pull/476)でExpressive Codeが公式サポートされ、
+最新のfuwariテンプレートではこの手順は不要となりました。
+:::
+
 FuwariのデフォルトコードブロックはLanguageやファイル名を表示できないため、`astro-expressive-code`を利用してカスタマイズしてみました。
 
 # Expressive Codeとは
