@@ -2,7 +2,7 @@
 title: 個人WEBをAstro + Fuwariで書き直しました
 published: 2025-02-28
 description: "個人WEBをAstro + Fuwariで書き直しました"
-image: "./fuwari.png"
+image: "./cover.webp"
 tags: [Astro, Tailwind CSS, Fuwari]
 category: "Web Site"
 draft: false
