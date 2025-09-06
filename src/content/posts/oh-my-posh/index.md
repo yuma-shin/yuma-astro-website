@@ -2,7 +2,7 @@
 title: Oh My PoshでWindows Terminalをカスタマイズする(備忘録)
 published: 2025-02-25
 description: "Oh My Poshを使用してWindows Terminalをカスタマイズする方法を備忘録として残しておきます。"
-image: "./terminal.webp"
+image: "./cover.webp"
 tags: [Oh My Posh, Terminal]
 category: "Terminal"
 draft: false
